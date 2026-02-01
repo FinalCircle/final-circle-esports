@@ -35,7 +35,7 @@ body{
   animation-delay:3s;
 }
 .intro-logo{
-  width:220px;       /* mobile */
+  width:220px;
   height:220px;
   object-fit:contain;
   opacity:0;
@@ -61,8 +61,6 @@ body{
   text-align:center;
   padding:30px;
 }
-
-/* MOBILE DEFAULT */
 .hero-content{
   display:flex;
   flex-direction:column;
@@ -107,25 +105,36 @@ body{
   border:1px solid #E6B65C
 }
 
-/* NOTICE BAR */
+/* =========================
+   NOTICE BAR – MULTI LINE
+========================= */
 .notice-wrap{
   margin:18px auto 0;
   width:100%;
   max-width:420px;
+  height:80px;
   border:1px solid #E6B65C;
   overflow:hidden;
   background:#000;
 }
-.notice-text{
-  padding:10px 0;
-  white-space:nowrap;
+.notice-list{
+  list-style:none;
+  padding:10px;
+  margin:0;
+  animation:noticeVerticalScroll 12s linear infinite; /* medium speed */
+}
+.notice-list li{
   color:#7b1e1e;
   font-weight:bold;
-  animation:noticeScroll 14s linear infinite;
+  padding:4px 0;
+  text-align:center;
 }
-@keyframes noticeScroll{
-  0%{transform:translateX(100%)}
-  100%{transform:translateX(-100%)}
+@keyframes noticeVerticalScroll{
+  0%{transform:translateY(0)}
+  100%{transform:translateY(-50%)}
+}
+.notice-wrap:hover .notice-list{
+  animation-play-state:paused;
 }
 
 /* =========================
@@ -167,25 +176,19 @@ body{
 }
 
 /* =========================
-   DESKTOP ONLY (FINAL FIX)
+   DESKTOP ONLY
 ========================= */
 @media (min-width:1024px){
-
   .hero{
     align-items:flex-start;
   }
-
-  /* 🔴➡🟢 move content to green area */
   .hero-content{
     margin-top:10px;
   }
-
-  /* 🖥️ Desktop logo = 2.5X */
   .hero-logo{
     width:700px;
     height:700px;
   }
-
   .intro-logo{
     width:550px;
     height:550px;
@@ -211,15 +214,18 @@ body{
     <p>WE BUILD TRUST</p>
 
     <div class="btn-group">
-      <a href="#daily" class="btn">Join Daily Scrims</a>
-      <a href="#weekly" class="btn btn-outline">Join Weekly League</a>
+      <a href="#daily" class="btn">Daily Scrims</a>
+      <a href="#weekly" class="btn btn-outline">Weekly League</a>
       <a href="#rules" class="btn btn-outline">Rules & Regulations</a>
     </div>
 
+    <!-- NOTICE BAR -->
     <div class="notice-wrap">
-      <div class="notice-text">
-        🔔 Elite weekly league starts 1 March • Daily paid scrims starts 15 Feb • Tdm revenge starts 5 Feb   🔔
-      </div>
+      <ul class="notice-list">
+        <li>🔔 Elite weekly league starts 1 March</li>
+        <li>🔔 Daily paid scrims starts 15 Feb</li>
+        <li>🔔 TDM Revenge scrims starts 5 Feb</li>
+      </ul>
     </div>
 
   </div>
