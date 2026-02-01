@@ -94,26 +94,22 @@ body{
   border:1px solid #E6B65C
 }
 
-/* =========================
-   NOTICE BAR (FIXED)
-========================= */
+/* NOTICE BAR */
 .notice-wrap{
   margin:18px auto 0;
   width:100%;
   max-width:420px;
   height:90px;
   border:1px solid #E6B65C;
-  background:#000;
+  background:transparent;   /* ✅ transparent */
   overflow:hidden;
   position:relative;
 }
-
 .notice-inner{
   position:absolute;
   width:100%;
   top:0;
 }
-
 .notice-item{
   text-align:center;
   padding:6px 10px;
@@ -122,9 +118,7 @@ body{
   font-size:14px;
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* SECTIONS */
 .section{
   padding:45px 20px;
   text-align:center;
@@ -143,12 +137,25 @@ body{
   color:#aaa
 }
 
-/* DESKTOP */
+/* =========================
+   DESKTOP ONLY CHANGES
+========================= */
 @media (min-width:1024px){
+
+  /* Layout */
   .hero{align-items:flex-start}
   .hero-content{margin-top:10px}
   .hero-logo{width:700px;height:700px}
   .intro-logo{width:550px;height:550px}
+
+  /* 🔥 FONT SIZE DOUBLE (DESKTOP ONLY) */
+  body{
+    font-size:200%;
+  }
+
+  .notice-item{
+    font-size:1.6rem;
+  }
 }
 </style>
 </head>
@@ -215,17 +222,14 @@ body{
 © 2026 Final Circle eSports™ | Official Website
 </div>
 
-<!-- =========================
-     NOTICE SCROLL SCRIPT
-========================= -->
+<!-- NOTICE SCROLL SCRIPT -->
 <script>
 const wrap = document.getElementById("noticeWrap");
 const inner = document.getElementById("noticeInner");
 
-let speed = 0.6; // MEDIUM SPEED
+let speed = 0.6;
 let pos = 0;
 
-// Duplicate content for infinite loop
 inner.innerHTML += inner.innerHTML;
 const itemHeight = inner.children[0].offsetHeight;
 const totalHeight = itemHeight * (inner.children.length / 2);
@@ -240,7 +244,6 @@ function scrollNotice(){
 }
 scrollNotice();
 
-// Manual scroll support
 wrap.addEventListener("wheel", e=>{
   e.preventDefault();
   pos -= e.deltaY * 0.3;
