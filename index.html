@@ -6,11 +6,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0b0b0b;color:#fff}
 
 /* =========================
-   INTRO
+   GLOBAL RESET
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif
+}
+body{
+  background:#0b0b0b;
+  color:#fff
+}
+
+/* =========================
+   INTRO SCREEN
 ========================= */
 .intro{
   position:fixed;
@@ -45,10 +57,12 @@ body{background:#0b0b0b;color:#fff}
   75%{transform:translate(1px,1px)}
   100%{transform:translate(0,0)}
 }
-@keyframes introFade{to{opacity:0;visibility:hidden}}
+@keyframes introFade{
+  to{opacity:0;visibility:hidden}
+}
 
 /* =========================
-   HERO
+   HERO SECTION
 ========================= */
 .hero{
   min-height:100vh;
@@ -58,11 +72,15 @@ body{background:#0b0b0b;color:#fff}
   padding:30px;
   background:url("banner.jpg") center/cover no-repeat;
 }
+
+/* 👇 THIS IS THE REAL MOVING BLOCK */
 .hero-content{
   display:flex;
   flex-direction:column;
   align-items:center;
 }
+
+/* LOGO */
 .hero-logo{
   width:300px;
   height:300px;
@@ -71,39 +89,50 @@ body{background:#0b0b0b;color:#fff}
   animation:finalGlow 3s ease-in-out infinite;
 }
 
-/* 🔥 REAL GOLD GLOW (WORKS FOR PNG) */
+/* =========================
+   🔥 FINAL GOLD GLOW (TRANSPARENT ONLY)
+========================= */
 @keyframes finalGlow{
   0%,100%{
     filter:
-      brightness(1.15)
-      saturate(1.8)
-      invert(75%)
-      sepia(90%)
-      hue-rotate(6deg)
-      contrast(1.15);
-    box-shadow:
-      0 0 25px rgba(255,200,90,.6),
-      0 0 70px rgba(255,170,60,.45);
-  }
-  50%{
-    filter:
       brightness(1.25)
-      saturate(2.1)
+      saturate(2.2)
       invert(78%)
       sepia(95%)
       hue-rotate(6deg)
-      contrast(1.25);
-    box-shadow:
-      0 0 45px rgba(255,215,120,.95),
-      0 0 110px rgba(255,180,80,.75);
+      contrast(1.25)
+      drop-shadow(0 0 18px rgba(255,200,90,.55))
+      drop-shadow(0 0 45px rgba(255,170,60,.35));
+  }
+  50%{
+    filter:
+      brightness(1.35)
+      saturate(2.5)
+      invert(80%)
+      sepia(100%)
+      hue-rotate(6deg)
+      contrast(1.35)
+      drop-shadow(0 0 30px rgba(255,215,120,.9))
+      drop-shadow(0 0 75px rgba(255,180,80,.7));
   }
 }
 
-.hero h1{color:#E6B65C;font-size:3rem;margin-bottom:6px}
-.hero p{color:#ccc;margin-bottom:10px;letter-spacing:2px}
+/* TEXT */
+.hero h1{
+  color:#E6B65C;
+  font-size:3rem;
+  margin-bottom:6px
+}
+.hero p{
+  color:#ccc;
+  margin-bottom:10px;
+  letter-spacing:2px
+}
 
 /* BUTTONS */
-.btn-group{margin-top:-10px}
+.btn-group{
+  margin-top:-10px
+}
 .btn{
   display:inline-block;
   margin:6px;
@@ -120,7 +149,7 @@ body{background:#0b0b0b;color:#fff}
   border:1px solid #E6B65C
 }
 
-/* NOTICE */
+/* NOTICE BAR */
 .notice-wrap{
   margin:18px auto 0;
   width:100%;
@@ -142,7 +171,7 @@ body{background:#0b0b0b;color:#fff}
 }
 
 /* =========================
-   SECTIONS
+   CONTENT SECTIONS
 ========================= */
 .section{
   padding:45px 20px;
@@ -152,6 +181,7 @@ body{background:#0b0b0b;color:#fff}
 .section h2{color:#E6B65C;margin-bottom:14px}
 .section h3{color:#FFD27D;margin-top:14px}
 .section p{color:#ccc;margin:6px 0}
+
 .rules{
   max-width:900px;
   margin:0 auto;
@@ -171,7 +201,7 @@ body{background:#0b0b0b;color:#fff}
 }
 
 /* =========================
-   📱 MOBILE – SAME AS BEFORE
+   📱 MOBILE (UNCHANGED)
 ========================= */
 @media (max-width: 768px){
   .hero{
@@ -180,15 +210,14 @@ body{background:#0b0b0b;color:#fff}
 }
 
 /* =========================
-   🖥️ DESKTOP – PLACE CONTENT BETWEEN
-   BANNER LOGO & SOLDIERS
+   🖥️ DESKTOP ONLY POSITION FIX
 ========================= */
 @media (min-width: 1024px){
-  .hero{
-    align-items:flex-start;
-    padding-top:360px; /* 👈 CHANGE THIS IF NEEDED */
+  .hero-content{
+    margin-top:320px;   /* ← यही adjust करना है */
   }
 }
+
 </style>
 </head>
 
@@ -200,7 +229,9 @@ body{background:#0b0b0b;color:#fff}
 
 <div class="hero">
   <div class="hero-content">
+
     <img src="logo.png" class="hero-logo">
+
     <h1>Final Circle eSports</h1>
     <p>WE BUILD TRUST</p>
 
@@ -215,6 +246,7 @@ body{background:#0b0b0b;color:#fff}
         🔔 Gameplay recording is mandatory • Hack use = Permanent Ban • Proof required for free slot
       </div>
     </div>
+
   </div>
 </div>
 
@@ -271,4 +303,4 @@ body{background:#0b0b0b;color:#fff}
 </div>
 
 </body>
-   </html>
+         </html>
