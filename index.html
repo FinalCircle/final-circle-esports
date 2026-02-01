@@ -30,7 +30,7 @@ body{background:#0b0b0b;color:#fff}
 .hero p{color:#ccc;letter-spacing:2px}
 
 /* BUTTONS */
-.btn-group{margin-top:10px}
+.btn-group{margin-top:14px}
 .btn{
   display:inline-block;margin:6px;padding:13px 24px;
   background:#E6B65C;color:#000;text-decoration:none;font-weight:bold;border-radius:6px
@@ -45,40 +45,91 @@ body{background:#0b0b0b;color:#fff}
 .notice-item{text-align:center;padding:6px 10px;color:#fff;font-weight:bold}
 
 /* SECTION */
-.section{padding:50px 20px;border-top:1px solid #222}
-.section h2{text-align:center;color:#E6B65C;margin-bottom:20px}
+.section{padding:55px 20px;border-top:1px solid #222}
+.section h2{text-align:center;color:#E6B65C;margin-bottom:25px}
 
 /* HALL OF FAME */
-.hof-wrapper{max-width:520px;margin:0 auto;border:1px solid #E6B65C;padding:20px;text-align:center}
-.hof-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.hof-grid img{width:100%;border-radius:6px;border:1px solid #333}
+.hof-wrapper{
+  max-width:620px;margin:0 auto;
+  border:1px solid #E6B65C;padding:20px
+}
+.hof-item{
+  display:flex;align-items:center;gap:14px;margin-bottom:18px
+}
+.hof-label{
+  min-width:160px;font-weight:bold;color:#FFD27D
+}
+.hof-item img{
+  max-width:320px;width:100%;
+  border-radius:6px;border:1px solid #333
+}
 
 /* SCRIMS GRID */
 .scrims-grid{
   display:grid;
   grid-template-columns:1fr;
-  gap:20px;
+  gap:25px;
   max-width:1200px;
   margin:0 auto
 }
 .scrim-card{
   border:1px solid #E6B65C;
-  padding:20px;
+  padding:22px;
   text-align:center
 }
-.scrim-card h3{color:#FFD27D;margin-bottom:10px}
-.scrim-card p{color:#ccc;margin:5px 0}
+.scrim-card h3{color:#FFD27D;margin-bottom:12px}
+.scrim-card p{color:#ccc;margin:6px 0}
 
-/* RULES */
-.rules{max-width:900px;margin:0 auto;line-height:1.8;color:#ccc}
+/* SCRIM BUTTONS */
+.scrim-btns{margin-top:15px}
+.scrim-btns a{
+  display:inline-block;
+  margin:6px;
+  padding:10px 18px;
+  background:#E6B65C;
+  color:#000;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:5px
+}
+
+/* CONTACT BUTTONS */
+.contact-btns a{
+  display:inline-block;
+  margin:8px;
+  padding:12px 22px;
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:6px;
+  color:#000;
+}
+.whatsapp{background:#25D366}
+.instagram{background:linear-gradient(45deg,#feda75,#d62976,#962fbf,#4f5bd5);color:#fff}
+.telegram{background:#229ED9;color:#fff}
+.discord{background:#5865F2;color:#fff}
+.youtube{background:#FF0000;color:#fff}
+.email{background:#E6B65C}
 
 /* FOOTER */
-.footer{text-align:center;padding:20px;background:#000;color:#aaa;font-size:14px}
+.footer{
+  text-align:center;
+  padding:20px;
+  background:#000;
+  color:#aaa;
+  font-size:14px
+}
+.footer a{
+  color:#888;
+  font-size:14px;
+  margin:0 6px;
+  text-decoration:none
+}
+.footer a:hover{color:#E6B65C}
 
 /* DESKTOP */
 @media(min-width:1024px){
-  body{font-size:200%}
-  .hero-logo{width:700px;height:700px}
+  body{font-size:120%}
+  .hero-logo{width:520px;height:520px}
   .intro-logo{width:550px;height:550px}
   .scrims-grid{grid-template-columns:1fr 1fr 1fr}
 }
@@ -100,10 +151,12 @@ body{background:#0b0b0b;color:#fff}
   <a href="#daily" class="btn">Daily Scrims</a>
   <a href="#weekly" class="btn">Weekly League</a>
   <a href="#tdm" class="btn">TDM Revenge</a>
+  <a href="#hof" class="btn">Hall of Fame</a>
+  <a href="#contact" class="btn">Contact Us</a>
   <a href="#rules" class="btn">Rules</a>
 </div>
 
-<div class="notice-wrap" id="noticeWrap">
+<div class="notice-wrap">
   <div class="notice-inner" id="noticeInner">
     <div class="notice-item">Elite Weekly League starts 1 March</div>
     <div class="notice-item">Daily Paid Scrims starts 15 Feb</div>
@@ -117,12 +170,26 @@ body{background:#0b0b0b;color:#fff}
 <!-- HALL OF FAME -->
 <div class="section" id="hof">
 <h2>Hall of Fame – Weekly Elite League</h2>
+
 <div class="hof-wrapper">
-  <div class="hof-grid">
+  <div class="hof-item">
+    <div class="hof-label">🥇 Winner</div>
     <img src="hall-of-fame/wt1.png">
+  </div>
+  <div class="hof-item">
+    <div class="hof-label">🥈 Runner Up</div>
     <img src="hall-of-fame/wt2.png">
+  </div>
+  <div class="hof-item">
+    <div class="hof-label">🥉 Third Place</div>
     <img src="hall-of-fame/wt3.png">
+  </div>
+  <div class="hof-item">
+    <div class="hof-label">🔥 Most Kill Team</div>
     <img src="hall-of-fame/tkt.png">
+  </div>
+  <div class="hof-item">
+    <div class="hof-label">🎯 Most Kill Player</div>
     <img src="hall-of-fame/tki.png">
   </div>
 </div>
@@ -134,7 +201,6 @@ body{background:#0b0b0b;color:#fff}
 
 <div class="scrims-grid">
 
-<!-- DAILY -->
 <div class="scrim-card" id="daily">
 <h3>Daily Paid Scrims</h3>
 <p>Game: BGMI</p>
@@ -145,21 +211,27 @@ body{background:#0b0b0b;color:#fff}
 <p>Teams: 20</p>
 <p>Prize Pool: ₹750</p>
 <p>Sunday Dhamaka: Top 3 FREE entry</p>
+<div class="scrim-btns">
+  <a href="daily-form.html">Join</a>
+  <a href="daily-info.html">More Information</a>
+</div>
 </div>
 
-<!-- WEEKLY -->
 <div class="scrim-card" id="weekly">
 <h3>Weekly Elite League</h3>
 <p>Entry: ₹600 / Team</p>
 <p>Duration: 7 Days</p>
 <p>Matches: 3 per day</p>
-<p>Teams: 16 + wildcards</p>
+<p>Teams: 16 + Wildcards</p>
 <p>Prize Pool: ₹8000</p>
 <p>Top Kill Team: ₹500</p>
 <p>Top Kill Individual: ₹500</p>
+<div class="scrim-btns">
+  <a href="weekly-form.html">Join</a>
+  <a href="weekly-info.html">More Information</a>
+</div>
 </div>
 
-<!-- TDM -->
 <div class="scrim-card" id="tdm">
 <h3>TDM Revenge Scrims</h3>
 <p>Entry: ₹10 / Player</p>
@@ -167,6 +239,10 @@ body{background:#0b0b0b;color:#fff}
 <p>Per Death Penalty: ₹0.5</p>
 <p>Modes: 1v1 / 4v4</p>
 <p>Final Payout = (Kills × 1) − (Deaths × 0.5)</p>
+<div class="scrim-btns">
+  <a href="tdm-form.html">Join</a>
+  <a href="tdm-info.html">More Information</a>
+</div>
 </div>
 
 </div>
@@ -185,9 +261,26 @@ body{background:#0b0b0b;color:#fff}
 </div>
 </div>
 
+<!-- CONTACT -->
+<div class="section" id="contact">
+<h2>Contact Us</h2>
+<div class="contact-btns">
+  <a href="PASTE_WHATSAPP_LINK" class="whatsapp">WhatsApp</a>
+  <a href="PASTE_INSTAGRAM_LINK" class="instagram">Instagram</a>
+  <a href="PASTE_TELEGRAM_LINK" class="telegram">Telegram</a>
+  <a href="PASTE_DISCORD_LINK" class="discord">Discord</a>
+  <a href="PASTE_YOUTUBE_LINK" class="youtube">YouTube</a>
+  <a href="mailto:finalcircleesports@gmail.com" class="email">Mail Us</a>
+</div>
+</div>
+
+<!-- FOOTER -->
 <div class="footer">
-© 2026 Final Circle eSports™ <br>
-Skill Based Game • No Gambling
+  © 2026 Final Circle eSports™ <br>
+  <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a> |
+  <a href="terms-and-conditions.pdf" target="_blank">Terms & Conditions</a> |
+  <a href="disclaimer.pdf" target="_blank">Disclaimer</a><br>
+  Skill Based Game • No Gambling
 </div>
 
 <script>
