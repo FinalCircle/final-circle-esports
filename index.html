@@ -10,7 +10,7 @@
 body{background:#0b0b0b;color:#fff}
 
 /* =========================
-   INTRO (CENTER)
+   INTRO
 ========================= */
 .intro{
   position:fixed;
@@ -28,9 +28,9 @@ body{background:#0b0b0b;color:#fff}
   height:230px;
   object-fit:contain;
   opacity:0;
-  filter:brightness(0)saturate(100%)
-  invert(63%)sepia(98%)saturate(350%)
-  hue-rotate(5deg)brightness(105%)contrast(105%);
+  filter:
+    invert(63%)sepia(98%)saturate(350%)
+    hue-rotate(5deg)brightness(105%)contrast(105%);
   animation:
     hologramBuild 3.6s ease-out forwards,
     sandVibe .14s linear 18;
@@ -62,76 +62,76 @@ body{background:#0b0b0b;color:#fff}
   justify-content:center;
   text-align:center;
   padding:30px;
-    /* 🔥 BANNER IMAGE */
-  background-image:url("banner.jpg");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
+  background:url("banner.jpg") center/cover no-repeat;
 }
 .hero-logo{
   width:300px;
   height:300px;
   object-fit:contain;
-  margin-bottom:3px;
+  margin-bottom:-10px;
   animation:finalGlow 3s ease-in-out infinite;
 }
-
-/* 🔥 FIXED GLOW (NO RECTANGLE) */
 @keyframes finalGlow{
-  0%{
+  0%,100%{
     filter:
-      brightness(20)saturate(100%)
       invert(63%)sepia(98%)saturate(350%)
       hue-rotate(5deg)brightness(105%)contrast(105%)
-      drop-shadow(0 0 18px rgba(255,215,0,.45));
+      drop-shadow(0 0 18px rgba(230,182,92,.45));
   }
   50%{
     filter:
-      brightness(20)saturate(100%)
       invert(63%)sepia(98%)saturate(350%)
       hue-rotate(5deg)brightness(105%)contrast(105%)
-      drop-shadow(0 0 42px rgba(255,215,0,1));
+      drop-shadow(0 0 42px rgba(255,210,125,1));
   }
-  100%{
-    filter:
-      brightness(20)saturate(100%)
-      invert(63%)sepia(98%)saturate(350%)
-      hue-rotate(5deg)brightness(105%)contrast(105%)
-      drop-shadow(0 0 18px rgba(255,215,0,.45));
-  }
-   }
+}
 
-.hero h1{color:gold;font-size:3rem;margin-bottom:6px}
-.hero p{color:#ccc;margin-bottom:18px;letter-spacing:2px}
+.hero h1{
+  color:#E6B65C;
+  font-size:3rem;
+  margin-bottom:6px
+}
+.hero p{
+  color:#ccc;
+  margin-bottom:10px;
+  letter-spacing:2px
+}
 
-/* BUTTONS */
+/* BUTTONS – moved UP */
+.btn-group{
+  margin-top:-10px;
+}
 .btn{
   display:inline-block;
   margin:6px;
   padding:13px 24px;
-  background:gold;
+  background:#E6B65C;
   color:#000;
   text-decoration:none;
   font-weight:bold;
   border-radius:6px
 }
-.btn-outline{background:transparent;color:gold;border:1px solid gold}
+.btn-outline{
+  background:transparent;
+  color:#E6B65C;
+  border:1px solid #E6B65C
+}
 
 /* =========================
-   NOTICE BAR
+   NOTICE BAR (FIXED CENTER)
 ========================= */
 .notice-wrap{
-  margin-top:16px;
+  margin:18px auto 0;
   width:100%;
-  max-width:380px;
-  border:1px solid gold;
+  max-width:420px;
+  border:1px solid #E6B65C;
   overflow:hidden;
   background:#000;
 }
 .notice-text{
   padding:10px 0;
   white-space:nowrap;
-  color:#ffd700;
+  color:#FFD27D;
   font-weight:bold;
   animation:noticeScroll 14s linear infinite;
 }
@@ -148,11 +148,10 @@ body{background:#0b0b0b;color:#fff}
   text-align:center;
   border-top:1px solid #222
 }
-.section h2{color:gold;margin-bottom:14px}
-.section h3{color:#ffd700;margin-top:14px}
+.section h2{color:#E6B65C;margin-bottom:14px}
+.section h3{color:#FFD27D;margin-top:14px}
 .section p{color:#ccc;margin:6px 0}
 
-/* RULES */
 .rules{
   max-width:900px;
   margin:0 auto;
@@ -162,7 +161,7 @@ body{background:#0b0b0b;color:#fff}
 }
 .rules li{margin-bottom:9px}
 
-/* CONTACT COLORS */
+/* CONTACT */
 .whatsapp{background:#25D366;color:#000}
 .instagram{background:linear-gradient(45deg,#feda75,#d62976,#962fbf,#4f5bd5)}
 .telegram{background:#229ED9}
@@ -196,9 +195,11 @@ body{background:#0b0b0b;color:#fff}
     <h1>Final Circle eSports</h1>
     <p>WE BUILD TRUST</p>
 
-    <a href="#daily" class="btn">Join Daily Scrims</a>
-    <a href="#weekly" class="btn btn-outline">Join Weekly League</a>
-    <a href="#rules" class="btn btn-outline">Rules & Regulations</a>
+    <div class="btn-group">
+      <a href="#daily" class="btn">Join Daily Scrims</a>
+      <a href="#weekly" class="btn btn-outline">Join Weekly League</a>
+      <a href="#rules" class="btn btn-outline">Rules & Regulations</a>
+    </div>
 
     <div class="notice-wrap">
       <div class="notice-text">
@@ -208,7 +209,7 @@ body{background:#0b0b0b;color:#fff}
   </div>
 </div>
 
-<!-- DAILY PAID SCRIMS -->
+<!-- DAILY -->
 <div class="section" id="daily">
 <h2>Daily Paid Scrims</h2>
 <p>Game: Battlegrounds Mobile India (BGMI)</p>
@@ -254,10 +255,7 @@ body{background:#0b0b0b;color:#fff}
 <li>No refund after slot booking.</li>
 <li>Late entry not allowed.</li>
 <li>Organizer’s decision will be final.</li>
-<li>
-Gameplay recording is mandatory. Hack use will lead to permanent ban with no refund.
-Teams eliminated by hackers (with proof) will receive a free slot the next day.
-</li>
+<li>Gameplay recording is mandatory. Hack use = Permanent Ban.</li>
 </ul>
 </div>
 
@@ -265,7 +263,6 @@ Teams eliminated by hackers (with proof) will receive a free slot the next day.
 <div class="section">
 <h2>Contact Us</h2>
 <a href="mailto:finalcircleesports@gmail.com" class="btn email">Mail Us</a><br><br>
-
 <a href="PASTE_WHATSAPP_LINK" class="btn whatsapp">WhatsApp</a>
 <a href="PASTE_INSTAGRAM_LINK" class="btn instagram">Instagram</a><br><br>
 <a href="PASTE_TELEGRAM_LINK" class="btn telegram">Telegram</a>
@@ -278,4 +275,4 @@ Teams eliminated by hackers (with proof) will receive a free slot the next day.
 </div>
 
 </body>
-</html>
+   </html>
