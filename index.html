@@ -35,7 +35,7 @@ body{
   animation-delay:3s;
 }
 .intro-logo{
-  width:220px;
+  width:220px;       /* mobile */
   height:220px;
   object-fit:contain;
   opacity:0;
@@ -62,14 +62,14 @@ body{
   padding:30px;
 }
 
-/* MOBILE DEFAULT – SAME AS BEFORE */
+/* MOBILE DEFAULT */
 .hero-content{
   display:flex;
   flex-direction:column;
   align-items:center;
 }
 
-/* LOGO – MOBILE DEFAULT */
+/* LOGO – MOBILE */
 .hero-logo{
   width:280px;
   height:280px;
@@ -167,26 +167,28 @@ body{
 }
 
 /* =========================
-   DESKTOP ONLY – MOVE CONTENT UP
+   DESKTOP ONLY (FINAL FIX)
 ========================= */
 @media (min-width:1024px){
 
   .hero{
-    align-items:flex-start;   /* 👈 top side */
+    align-items:flex-start;
   }
 
+  /* 🔴➡🟢 move content to green area */
   .hero-content{
-    margin-top:60px;         /* 👈 yahan se upar niche control */
+    margin-top:40px;
   }
 
+  /* 🖥️ Desktop logo = 2.5X */
   .hero-logo{
-    width:560px;
-    height:560px;
+    width:700px;
+    height:700px;
   }
 
   .intro-logo{
-    width:440px;
-    height:440px;
+    width:550px;
+    height:550px;
   }
 }
 </style>
