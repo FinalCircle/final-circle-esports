@@ -36,7 +36,7 @@ body{
 }
 
 .intro-logo{
-  width:220px;
+  width:220px;           /* MOBILE DEFAULT */
   height:220px;
   object-fit:contain;
   opacity:0;
@@ -71,9 +71,9 @@ body{
   align-items:center;
 }
 
-/* LOGO – CLEAN */
+/* LOGO – MOBILE DEFAULT */
 .hero-logo{
-  width:280px;
+  width:280px;           /* MOBILE DEFAULT */
   height:280px;
   object-fit:contain;
   margin-bottom:-10px;
@@ -166,6 +166,23 @@ body{
   background:#000;
   font-size:14px;
   color:#aaa
+}
+
+/* =========================
+   DESKTOP ONLY – LOGO DOUBLE SIZE
+========================= */
+@media (min-width:1024px){
+
+  .hero-logo{
+    width:560px;       /* DOUBLE OF 280 */
+    height:560px;
+  }
+
+  .intro-logo{
+    width:440px;       /* DOUBLE OF 220 */
+    height:440px;
+  }
+
 }
 </style>
 </head>
