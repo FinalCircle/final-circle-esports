@@ -82,6 +82,21 @@ body{background:#0b0b0b;color:#fff}
   border-radius:6px;border:1px solid #333
 }
 
+/* TEAM POSITION TABLE */
+.team-position-box{
+  max-width:720px;
+  margin:0 auto;
+  border:1px solid #E6B65C;
+  padding:20px;
+  text-align:center
+}
+.team-position-box img{
+  width:100%;
+  max-width:680px;
+  border-radius:6px;
+  border:1px solid #333
+}
+
 /* SCRIMS GRID */
 .scrims-grid{
   display:grid;
@@ -111,7 +126,7 @@ body{background:#0b0b0b;color:#fff}
   display:inline-block
 }
 
-/* POINT TABLE (NEW SECTION) */
+/* POINT TABLE */
 .point-table-box{
   max-width:600px;
   margin:0 auto;
@@ -120,12 +135,15 @@ body{background:#0b0b0b;color:#fff}
 }
 .point-row{
   display:flex;
+  align-items:center;
   justify-content:space-between;
-  padding:6px 0;
+  padding:8px 0;
   border-bottom:1px solid #222;
   color:#ccc
 }
-.point-row span{min-width:45%}
+.point-left{width:45%;text-align:left}
+.point-mid{width:10%;text-align:center;color:#E6B65C;font-weight:bold}
+.point-right{width:45%;text-align:right}
 .point-note{
   margin-top:15px;
   text-align:center;
@@ -182,6 +200,7 @@ body{background:#0b0b0b;color:#fff}
 
 <div class="hero">
 <div class="hero-content">
+
 <img src="logo.png" class="hero-logo">
 <h1>FinalCircle ESports</h1>
 <p>WE BUILD TRUST</p>
@@ -202,6 +221,7 @@ body{background:#0b0b0b;color:#fff}
     <div class="notice-item">TDM Revenge starts 5 Feb</div>
   </div>
 </div>
+
 </div>
 </div>
 
@@ -211,15 +231,24 @@ body{background:#0b0b0b;color:#fff}
 <div class="hof-wrapper">
   <div class="hof-item"><div class="hof-label">🥇 Winner</div><img src="hall-of-fame/wt1.png"></div>
   <div class="hof-item"><div class="hof-label">🥈 Runner Up</div><img src="hall-of-fame/wt2.png"></div>
-  <div class="hof-item"><div class="hof-label">🥉 Third Place</div><img src="hall-of-fame/wt3.png"></div>
+  <div class="hof-item"><div class="hof-label">🥉 3rd</div><img src="hall-of-fame/wt3.png"></div>
   <div class="hof-item"><div class="hof-label">🔥 Most Kill Team</div><img src="hall-of-fame/tkt.png"></div>
   <div class="hof-item"><div class="hof-label">🎯 Most Kill Player</div><img src="hall-of-fame/tki.png"></div>
+</div>
+</div>
+
+<!-- TEAM POSITION TABLE -->
+<div class="section">
+<h2>Team Position Table</h2>
+<div class="team-position-box">
+  <img src="team-position-table.png" alt="Team Position Table">
 </div>
 </div>
 
 <!-- SCRIMS -->
 <div class="section">
 <h2>Our Scrims</h2>
+
 <div class="scrims-grid">
 
 <div class="scrim-card" id="daily">
@@ -233,8 +262,8 @@ body{background:#0b0b0b;color:#fff}
 <p>Prize Pool: ₹750</p>
 <p>Sunday Dhamaka: Top 3 FREE entry</p>
 <div class="scrim-btns">
-  <a href="daily-form.html">Join</a>
-  <a href="daily-info.html">More Information</a>
+  <a href="PASTE_DAILY_FORM_LINK" target="_blank">Join</a>
+  <a href="dinfo.pdf" target="_blank">More Information</a>
 </div>
 </div>
 
@@ -243,13 +272,16 @@ body{background:#0b0b0b;color:#fff}
 <p>Entry: ₹600 / Team</p>
 <p>Duration: 7 Days</p>
 <p>Matches: 3 per day</p>
-<p>Teams: 16 + Wildcards</p>
+<p><b>Total Teams: 20</b></p>
+<p>• 16 Teams = Paid Slots</p>
+<p>• 3 Teams = Previous Week Top 3</p>
+<p>• 1 Team = Invitation Slot</p>
 <p>Prize Pool: ₹8000</p>
 <p>Top Kill Team: ₹500</p>
 <p>Top Kill Individual: ₹500</p>
 <div class="scrim-btns">
-  <a href="weekly-form.html">Join</a>
-  <a href="weekly-info.html">More Information</a>
+  <a href="PASTE_WEEKLY_FORM_LINK" target="_blank">Join</a>
+  <a href="winfo.pdf" target="_blank">More Information</a>
 </div>
 </div>
 
@@ -260,30 +292,30 @@ body{background:#0b0b0b;color:#fff}
 <p>Per Death Penalty: ₹0.5</p>
 <p>Final Payout = (Kills × 1) − (Deaths × 0.5)</p>
 <div class="scrim-btns">
-  <a href="tdm-form.html">Join</a>
-  <a href="tdm-info.html">More Information</a>
+  <a href="PASTE_TDM_FORM_LINK" target="_blank">Join</a>
+  <a href="tinfo.pdf" target="_blank">More Information</a>
 </div>
 </div>
 
 </div>
 </div>
 
-<!-- POINT TABLE SECTION -->
+<!-- POINT TABLE -->
 <div class="section">
 <h2>Point Distribution Table</h2>
 <div class="point-table-box">
-  <div class="point-row"><span>1st Place</span><span>= 15</span></div>
-  <div class="point-row"><span>2nd Place</span><span>= 12</span></div>
-  <div class="point-row"><span>3rd Place</span><span>= 10</span></div>
-  <div class="point-row"><span>4th Place</span><span>= 8</span></div>
-  <div class="point-row"><span>5th Place</span><span>= 6</span></div>
-  <div class="point-row"><span>6th Place</span><span>= 4</span></div>
-  <div class="point-row"><span>7th Place</span><span>= 2</span></div>
-  <div class="point-row"><span>8th – 12th</span><span>= 1</span></div>
-  <div class="point-row"><span>13th – 15th</span><span>= 0</span></div>
-  <div class="point-row"><span>16th – 20th</span><span>= -1</span></div>
-  <div class="point-row"><span>20th – 25th</span><span>= -2</span></div>
-  <div class="point-row"><span>Per Kill</span><span>= 1 Point</span></div>
+  <div class="point-row"><div class="point-left">🥇 Winner</div><div class="point-mid">=</div><div class="point-right">15</div></div>
+  <div class="point-row"><div class="point-left">🥈 Runner Up</div><div class="point-mid">=</div><div class="point-right">12</div></div>
+  <div class="point-row"><div class="point-left">🥉 3rd</div><div class="point-mid">=</div><div class="point-right">10</div></div>
+  <div class="point-row"><div class="point-left">4th Place</div><div class="point-mid">=</div><div class="point-right">8</div></div>
+  <div class="point-row"><div class="point-left">5th Place</div><div class="point-mid">=</div><div class="point-right">6</div></div>
+  <div class="point-row"><div class="point-left">6th Place</div><div class="point-mid">=</div><div class="point-right">4</div></div>
+  <div class="point-row"><div class="point-left">7th Place</div><div class="point-mid">=</div><div class="point-right">2</div></div>
+  <div class="point-row"><div class="point-left">8th – 12th</div><div class="point-mid">=</div><div class="point-right">1</div></div>
+  <div class="point-row"><div class="point-left">13th – 15th</div><div class="point-mid">=</div><div class="point-right">0</div></div>
+  <div class="point-row"><div class="point-left">16th – 20th</div><div class="point-mid">=</div><div class="point-right">-1</div></div>
+  <div class="point-row"><div class="point-left">20th – 25th</div><div class="point-mid">=</div><div class="point-right">-2</div></div>
+  <div class="point-row"><div class="point-left">Per Kill</div><div class="point-mid">=</div><div class="point-right">1 Point</div></div>
 </div>
 <div class="point-note">
 This point table is applicable for Daily Paid Scrims and Weekly Elite League
@@ -305,21 +337,24 @@ This point table is applicable for Daily Paid Scrims and Weekly Elite League
 <div class="section" id="contact">
 <h2>Contact Us</h2>
 <div class="contact-btns">
-  <a href="#" class="whatsapp">WhatsApp</a>
-  <a href="#" class="instagram">Instagram</a>
-  <a href="#" class="telegram">Telegram</a>
-  <a href="#" class="discord">Discord</a>
-  <a href="#" class="youtube">YouTube</a>
+  <a href="PASTE_WHATSAPP_LINK" class="whatsapp">WhatsApp</a>
+  <a href="PASTE_INSTAGRAM_LINK" class="instagram">Instagram</a>
+  <a href="PASTE_TELEGRAM_LINK" class="telegram">Telegram</a>
+  <a href="PASTE_DISCORD_LINK" class="discord">Discord</a>
+  <a href="PASTE_YOUTUBE_LINK" class="youtube">YouTube</a>
   <a href="mailto:finalcircleesports@gmail.com" class="email">Mail Us</a>
 </div>
 </div>
 
 <div class="footer">
 © 2026 Final Circle eSports™ |
+<a href="about-us.pdf" target="_blank">About Us</a> |
 <a href="privacy-policy.pdf" target="_blank">Privacy Policy</a> |
 <a href="terms-and-conditions.pdf" target="_blank">Terms & Conditions</a> |
-<a href="disclaimer.pdf" target="_blank">Disclaimer</a><br>
-Skill Based Game • No Gambling
+<a href="disclaimer.pdf" target="_blank">Disclaimer</a><br><br>
+This is the official website of FinalCircle ESports.  
+This platform does not promote betting, gambling, or any luck-based games.  
+All tournaments are skill-based, rule-driven, and conducted for fair competition only.
 </div>
 
 <script>
@@ -338,4 +373,4 @@ scrollNotice();
 </script>
 
 </body>
-</html>
+  </html>
