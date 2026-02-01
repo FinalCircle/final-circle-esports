@@ -21,7 +21,7 @@ body{
 }
 
 /* =========================
-   INTRO – CENTER HOLOGRAM
+   INTRO – SIMPLE FADE
 ========================= */
 .intro{
   position:fixed;
@@ -32,44 +32,20 @@ body{
   justify-content:center;
   z-index:9999;
   animation:introFade 1s ease forwards;
-  animation-delay:4.2s;
+  animation-delay:3s;
 }
 
 .intro-logo{
-  width:230px;
-  height:230px;
+  width:220px;
+  height:220px;
   object-fit:contain;
   opacity:0;
-
-  background:transparent;
-  box-shadow:none;
-
-  animation:
-    hologramBuild 3.6s ease-out forwards,
-    sandVibe .14s linear 18;
+  animation:logoFadeIn 2s ease forwards;
 }
 
-@keyframes hologramBuild{
-  0%{
-    transform:scale(2.2);
-    opacity:0;
-    filter:blur(18px);
-  }
-  40%{opacity:.4}
-  70%{opacity:.85;filter:blur(4px)}
-  100%{
-    transform:scale(1);
-    opacity:1;
-    filter:blur(0);
-  }
-}
-
-@keyframes sandVibe{
-  0%{transform:translate(0,0)}
-  25%{transform:translate(1px,-1px)}
-  50%{transform:translate(-1px,1px)}
-  75%{transform:translate(1px,1px)}
-  100%{transform:translate(0,0)}
+@keyframes logoFadeIn{
+  from{opacity:0;transform:scale(1.2)}
+  to{opacity:1;transform:scale(1)}
 }
 
 @keyframes introFade{
@@ -81,7 +57,6 @@ body{
 ========================= */
 .hero{
   min-height:100vh;
-  position:relative;
   background:url("banner.jpg") center/cover no-repeat;
   display:flex;
   align-items:center;
@@ -96,45 +71,15 @@ body{
   align-items:center;
 }
 
-/* HERO LOGO */
+/* LOGO – CLEAN */
 .hero-logo{
-  width:300px;
-  height:300px;
+  width:280px;
+  height:280px;
   object-fit:contain;
   margin-bottom:-10px;
-
-  background:transparent;
-  box-shadow:none;
-
-  animation:finalGlow 3s ease-in-out infinite;
 }
 
-/* GOLD GLOW – LOGO ONLY */
-@keyframes finalGlow{
-  0%,100%{
-    filter:
-      brightness(1.2)
-      saturate(2.2)
-      invert(78%)
-      sepia(95%)
-      hue-rotate(6deg)
-      contrast(1.25)
-      drop-shadow(0 0 18px rgba(255,200,90,.55))
-      drop-shadow(0 0 45px rgba(255,170,60,.35));
-  }
-  50%{
-    filter:
-      brightness(1.35)
-      saturate(2.6)
-      invert(80%)
-      sepia(100%)
-      hue-rotate(6deg)
-      contrast(1.35)
-      drop-shadow(0 0 30px rgba(255,215,120,.9))
-      drop-shadow(0 0 75px rgba(255,180,80,.7));
-  }
-}
-
+/* TEXT */
 .hero h1{
   color:#E6B65C;
   font-size:3rem;
@@ -229,14 +174,14 @@ body{
 
 <!-- INTRO -->
 <div class="intro">
-  <img src="logo.png" class="intro-logo" alt="FinalCircle Logo">
+  <img src="logo.png" class="intro-logo" alt="Final Circle Logo">
 </div>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
 
-    <img src="logo.png" class="hero-logo" alt="FinalCircle Logo">
+    <img src="logo.png" class="hero-logo" alt="Final Circle Logo">
 
     <h1>Final Circle eSports</h1>
     <p>WE BUILD TRUST</p>
