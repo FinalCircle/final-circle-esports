@@ -71,6 +71,8 @@ body{background:#0b0b0b;color:#fff}
   margin-bottom:-10px;
   animation:finalGlow 3s ease-in-out infinite;
 }
+
+/* DEFAULT / DESKTOP GLOW */
 @keyframes finalGlow{
   0%,100%{
     filter:
@@ -86,21 +88,11 @@ body{background:#0b0b0b;color:#fff}
   }
 }
 
-.hero h1{
-  color:#E6B65C;
-  font-size:3rem;
-  margin-bottom:6px
-}
-.hero p{
-  color:#ccc;
-  margin-bottom:10px;
-  letter-spacing:2px
-}
+.hero h1{color:#E6B65C;font-size:3rem;margin-bottom:6px}
+.hero p{color:#ccc;margin-bottom:10px;letter-spacing:2px}
 
-/* BUTTONS – moved UP */
-.btn-group{
-  margin-top:-10px;
-}
+/* BUTTONS */
+.btn-group{margin-top:-10px}
 .btn{
   display:inline-block;
   margin:6px;
@@ -118,7 +110,7 @@ body{background:#0b0b0b;color:#fff}
 }
 
 /* =========================
-   NOTICE BAR (FIXED CENTER)
+   NOTICE BAR
 ========================= */
 .notice-wrap{
   margin:18px auto 0;
@@ -161,14 +153,6 @@ body{background:#0b0b0b;color:#fff}
 }
 .rules li{margin-bottom:9px}
 
-/* CONTACT */
-.whatsapp{background:#25D366;color:#000}
-.instagram{background:linear-gradient(45deg,#feda75,#d62976,#962fbf,#4f5bd5)}
-.telegram{background:#229ED9}
-.discord{background:#5865F2}
-.youtube{background:#FF0000}
-.email{background:#444}
-
 /* FOOTER */
 .footer{
   padding:16px;
@@ -177,21 +161,46 @@ body{background:#0b0b0b;color:#fff}
   font-size:14px;
   color:#aaa
 }
+
+/* =========================
+   🔥 MOBILE ONLY – STRONG GLOW
+========================= */
+@media (max-width: 768px){
+  .hero-logo,
+  .intro-logo{
+    filter:
+      brightness(1.6)
+      saturate(2.4)
+      invert(78%)
+      sepia(92%)
+      saturate(820%)
+      hue-rotate(8deg)
+      contrast(1.15)
+      drop-shadow(0 0 22px rgba(255,200,90,.75))
+      drop-shadow(0 0 55px rgba(255,170,60,.45));
+  }
+}
+
+/* =========================
+   🖥️ DESKTOP ONLY – POSITION FIX
+========================= */
+@media (min-width: 1024px){
+  .hero > div{
+    transform: translateY(120px);
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
 <div class="intro">
   <img src="logo.png" class="intro-logo">
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <div>
     <img src="logo.png" class="hero-logo">
-
     <h1>Final Circle eSports</h1>
     <p>WE BUILD TRUST</p>
 
@@ -209,70 +218,9 @@ body{background:#0b0b0b;color:#fff}
   </div>
 </div>
 
-<!-- DAILY -->
-<div class="section" id="daily">
-<h2>Daily Paid Scrims</h2>
-<p>Game: Battlegrounds Mobile India (BGMI)</p>
-<p>Entry Fee: ₹50 / Team</p>
-<p>Mode: Squad (TPP)</p>
-<p>Maps: Erangel / Miramar</p>
-<p>Matches: 3 Matches Per Day</p>
-<p>Total Teams: 18</p>
-
-<h3>Daily Prize Pool ₹750</h3>
-<p>🥇 1st: ₹350</p>
-<p>🥈 2nd: ₹250</p>
-<p>🥉 3rd: ₹100</p>
-<p>🔥 Top Kill (Overall – 3 Matches): ₹50</p>
-<p><b>Sunday Dhamaka:</b> Top 3 teams per day get FREE entry</p>
-</div>
-
-<!-- WEEKLY -->
-<div class="section" id="weekly">
-<h2>Weekly Elite League (T1)</h2>
-<p>Entry Fee: ₹600 / Team</p>
-<p>Format: Score Based League</p>
-<p>Duration: 7 Days</p>
-<p>Matches: 3 Matches Per Day</p>
-<p>Total Teams: 16 + 4 Wildcards</p>
-
-<h3>Weekly Prize Pool ₹8000</h3>
-<p>🥇 1st: ₹3500</p>
-<p>🥈 2nd: ₹2500</p>
-<p>🥉 3rd: ₹1000</p>
-<p>🔥 Top Kill (Team): ₹500</p>
-<p>🔥 Top Kill (Individual): ₹500</p>
-</div>
-
-<!-- RULES -->
-<div class="section" id="rules">
-<h2>Rules & Regulations</h2>
-<ul class="rules">
-<li>Only BGMI official version is allowed.</li>
-<li>Emulator / iPad strictly not allowed.</li>
-<li>Hack, Mod or Script usage = Permanent Ban.</li>
-<li>Room ID & Password will be shared before match time.</li>
-<li>No refund after slot booking.</li>
-<li>Late entry not allowed.</li>
-<li>Organizer’s decision will be final.</li>
-<li>Gameplay recording is mandatory. Hack use = Permanent Ban.</li>
-</ul>
-</div>
-
-<!-- CONTACT -->
-<div class="section">
-<h2>Contact Us</h2>
-<a href="mailto:finalcircleesports@gmail.com" class="btn email">Mail Us</a><br><br>
-<a href="PASTE_WHATSAPP_LINK" class="btn whatsapp">WhatsApp</a>
-<a href="PASTE_INSTAGRAM_LINK" class="btn instagram">Instagram</a><br><br>
-<a href="PASTE_TELEGRAM_LINK" class="btn telegram">Telegram</a>
-<a href="PASTE_DISCORD_LINK" class="btn discord">Discord</a>
-<a href="PASTE_YOUTUBE_LINK" class="btn youtube">YouTube</a>
-</div>
-
 <div class="footer">
 © 2026 Final Circle eSports™ | Official Website
 </div>
 
 </body>
-   </html>
+</html>
