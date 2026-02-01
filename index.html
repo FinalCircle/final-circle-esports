@@ -28,9 +28,6 @@ body{background:#0b0b0b;color:#fff}
   height:230px;
   object-fit:contain;
   opacity:0;
-  filter:
-    invert(63%)sepia(98%)saturate(350%)
-    hue-rotate(5deg)brightness(105%)contrast(105%);
   animation:
     hologramBuild 3.6s ease-out forwards,
     sandVibe .14s linear 18;
@@ -48,9 +45,7 @@ body{background:#0b0b0b;color:#fff}
   75%{transform:translate(1px,1px)}
   100%{transform:translate(0,0)}
 }
-@keyframes introFade{
-  to{opacity:0;visibility:hidden}
-}
+@keyframes introFade{to{opacity:0;visibility:hidden}}
 
 /* =========================
    HERO
@@ -58,11 +53,15 @@ body{background:#0b0b0b;color:#fff}
 .hero{
   min-height:100vh;
   display:flex;
-  align-items:center;
   justify-content:center;
   text-align:center;
   padding:30px;
   background:url("banner.jpg") center/cover no-repeat;
+}
+.hero-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 .hero-logo{
   width:300px;
@@ -72,19 +71,31 @@ body{background:#0b0b0b;color:#fff}
   animation:finalGlow 3s ease-in-out infinite;
 }
 
-/* DEFAULT / DESKTOP GLOW */
+/* 🔥 REAL GOLD GLOW (WORKS FOR PNG) */
 @keyframes finalGlow{
   0%,100%{
     filter:
-      invert(63%)sepia(98%)saturate(350%)
-      hue-rotate(5deg)brightness(105%)contrast(105%)
-      drop-shadow(0 0 18px rgba(230,182,92,.45));
+      brightness(1.15)
+      saturate(1.8)
+      invert(75%)
+      sepia(90%)
+      hue-rotate(6deg)
+      contrast(1.15);
+    box-shadow:
+      0 0 25px rgba(255,200,90,.6),
+      0 0 70px rgba(255,170,60,.45);
   }
   50%{
     filter:
-      invert(63%)sepia(98%)saturate(350%)
-      hue-rotate(5deg)brightness(105%)contrast(105%)
-      drop-shadow(0 0 42px rgba(255,210,125,1));
+      brightness(1.25)
+      saturate(2.1)
+      invert(78%)
+      sepia(95%)
+      hue-rotate(6deg)
+      contrast(1.25);
+    box-shadow:
+      0 0 45px rgba(255,215,120,.95),
+      0 0 110px rgba(255,180,80,.75);
   }
 }
 
@@ -109,9 +120,7 @@ body{background:#0b0b0b;color:#fff}
   border:1px solid #E6B65C
 }
 
-/* =========================
-   NOTICE BAR
-========================= */
+/* NOTICE */
 .notice-wrap{
   margin:18px auto 0;
   width:100%;
@@ -143,7 +152,6 @@ body{background:#0b0b0b;color:#fff}
 .section h2{color:#E6B65C;margin-bottom:14px}
 .section h3{color:#FFD27D;margin-top:14px}
 .section p{color:#ccc;margin:6px 0}
-
 .rules{
   max-width:900px;
   margin:0 auto;
@@ -163,30 +171,22 @@ body{background:#0b0b0b;color:#fff}
 }
 
 /* =========================
-   🔥 MOBILE ONLY – STRONG GLOW
+   📱 MOBILE – SAME AS BEFORE
 ========================= */
 @media (max-width: 768px){
-  .hero-logo,
-  .intro-logo{
-    filter:
-      brightness(1.6)
-      saturate(2.4)
-      invert(78%)
-      sepia(92%)
-      saturate(820%)
-      hue-rotate(8deg)
-      contrast(1.15)
-      drop-shadow(0 0 22px rgba(255,200,90,.75))
-      drop-shadow(0 0 55px rgba(255,170,60,.45));
+  .hero{
+    align-items:center;
   }
 }
 
 /* =========================
-   🖥️ DESKTOP ONLY – POSITION FIX
+   🖥️ DESKTOP – PLACE CONTENT BETWEEN
+   BANNER LOGO & SOLDIERS
 ========================= */
 @media (min-width: 1024px){
-  .hero > div{
-    transform: translateY(120px);
+  .hero{
+    align-items:flex-start;
+    padding-top:260px; /* 👈 CHANGE THIS IF NEEDED */
   }
 }
 </style>
@@ -199,7 +199,7 @@ body{background:#0b0b0b;color:#fff}
 </div>
 
 <div class="hero">
-  <div>
+  <div class="hero-content">
     <img src="logo.png" class="hero-logo">
     <h1>Final Circle eSports</h1>
     <p>WE BUILD TRUST</p>
@@ -218,9 +218,57 @@ body{background:#0b0b0b;color:#fff}
   </div>
 </div>
 
+<!-- DAILY -->
+<div class="section" id="daily">
+<h2>Daily Paid Scrims</h2>
+<p>Game: Battlegrounds Mobile India (BGMI)</p>
+<p>Entry Fee: ₹50 / Team</p>
+<p>Mode: Squad (TPP)</p>
+<p>Maps: Erangel / Miramar</p>
+<p>Matches: 3 Matches Per Day</p>
+<p>Total Teams: 18</p>
+<h3>Daily Prize Pool ₹750</h3>
+<p>🥇 1st: ₹350</p>
+<p>🥈 2nd: ₹250</p>
+<p>🥉 3rd: ₹100</p>
+<p>🔥 Top Kill (Overall – 3 Matches): ₹50</p>
+<p><b>Sunday Dhamaka:</b> Top 3 teams per day get FREE entry</p>
+</div>
+
+<!-- WEEKLY -->
+<div class="section" id="weekly">
+<h2>Weekly Elite League (T1)</h2>
+<p>Entry Fee: ₹600 / Team</p>
+<p>Format: Score Based League</p>
+<p>Duration: 7 Days</p>
+<p>Matches: 3 Matches Per Day</p>
+<p>Total Teams: 16 + 4 Wildcards</p>
+<h3>Weekly Prize Pool ₹8000</h3>
+<p>🥇 1st: ₹3500</p>
+<p>🥈 2nd: ₹2500</p>
+<p>🥉 3rd: ₹1000</p>
+<p>🔥 Top Kill (Team): ₹500</p>
+<p>🔥 Top Kill (Individual): ₹500</p>
+</div>
+
+<!-- RULES -->
+<div class="section" id="rules">
+<h2>Rules & Regulations</h2>
+<ul class="rules">
+<li>Only BGMI official version is allowed.</li>
+<li>Emulator / iPad strictly not allowed.</li>
+<li>Hack, Mod or Script usage = Permanent Ban.</li>
+<li>Room ID & Password will be shared before match time.</li>
+<li>No refund after slot booking.</li>
+<li>Late entry not allowed.</li>
+<li>Organizer’s decision will be final.</li>
+<li>Gameplay recording is mandatory.</li>
+</ul>
+</div>
+
 <div class="footer">
 © 2026 Final Circle eSports™ | Official Website
 </div>
 
 </body>
-</html>
+   </html>
