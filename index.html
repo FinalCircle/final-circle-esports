@@ -65,12 +65,19 @@ body{
 ========================= */
 .hero{
   min-height:100vh;
+  position:relative;
+  background:url("banner.jpg") center/cover no-repeat;
+}
+
+/* MOBILE DEFAULT */
+.hero{
   display:flex;
+  align-items:center;
   justify-content:center;
   text-align:center;
   padding:30px;
-  background:url("banner.jpg") center/cover no-repeat;
 }
+
 .hero-content{
   display:flex;
   flex-direction:column;
@@ -86,7 +93,7 @@ body{
   animation:finalGlow 3s ease-in-out infinite;
 }
 
-/* 🔥 CLEAN GOLD GLOW – TRANSPARENT ONLY */
+/* 🔥 GOLD GLOW – TRANSPARENT ONLY */
 @keyframes finalGlow{
   0%,100%{
     filter:
@@ -124,9 +131,7 @@ body{
 }
 
 /* BUTTONS */
-.btn-group{
-  margin-top:-10px
-}
+.btn-group{margin-top:-10px}
 .btn{
   display:inline-block;
   margin:6px;
@@ -203,21 +208,25 @@ body{
 }
 
 /* =========================
-   MOBILE – NO CHANGE
+   DESKTOP – EXACT BANNER POSITION
 ========================= */
-@media (max-width: 768px){
-  .hero{
-    align-items:center;
-  }
-}
+@media (min-width:1024px){
 
-/* =========================
-   DESKTOP – CORRECT PLACEMENT
-========================= */
-@media (min-width: 1024px){
-  .hero-content{
-    margin-top:320px;   /* soldier ke head ke upar wali empty space */
+  .hero{
+    display:block;
+    padding:0;
   }
+
+  .hero-content{
+    position:absolute;
+    top:340px;              /* 👈 यही empty space है */
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
+    max-width:900px;
+    text-align:center;
+  }
+
 }
 </style>
 </head>
