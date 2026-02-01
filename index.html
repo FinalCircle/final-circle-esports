@@ -6,203 +6,114 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,sans-serif
-}
-body{
-  background:#0b0b0b;
-  color:#fff
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0b0b0b;color:#fff}
 
 /* INTRO */
 .intro{
-  position:fixed;
-  inset:0;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-  animation:introFade 1s ease forwards;
-  animation-delay:3s;
+  position:fixed;inset:0;background:#000;
+  display:flex;align-items:center;justify-content:center;
+  z-index:9999;animation:introFade 1s ease forwards;animation-delay:3s
 }
 .intro-logo{
-  width:220px;
-  height:220px;
-  object-fit:contain;
-  opacity:0;
-  animation:logoFadeIn 2s ease forwards;
+  width:220px;height:220px;object-fit:contain;
+  opacity:0;animation:logoFadeIn 2s ease forwards
 }
-@keyframes logoFadeIn{
-  from{opacity:0;transform:scale(1.2)}
-  to{opacity:1;transform:scale(1)}
-}
-@keyframes introFade{
-  to{opacity:0;visibility:hidden}
-}
+@keyframes logoFadeIn{from{opacity:0;transform:scale(1.2)}to{opacity:1}}
+@keyframes introFade{to{opacity:0;visibility:hidden}}
 
 /* HERO */
 .hero{
   min-height:100vh;
   background:url("banner.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:30px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:30px
 }
-.hero-content{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-.hero-logo{
-  width:280px;
-  height:280px;
-  object-fit:contain;
-  margin-bottom:-10px;
-}
-.hero h1{
-  color:#E6B65C;
-  font-size:3rem;
-  margin-bottom:6px
-}
-.hero p{
-  color:#ccc;
-  margin-bottom:10px;
-  letter-spacing:2px
-}
+.hero-content{display:flex;flex-direction:column;align-items:center}
+.hero-logo{width:280px;height:280px;object-fit:contain;margin-bottom:-10px}
+.hero h1{color:#E6B65C;font-size:3rem}
+.hero p{color:#ccc;letter-spacing:2px}
 
 /* BUTTONS */
 .btn-group{margin-top:-10px}
 .btn{
-  display:inline-block;
-  margin:6px;
-  padding:13px 24px;
-  background:#E6B65C;
-  color:#000;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:6px
-}
-.btn-outline{
-  background:#E6B65C;
-  color:#000;
-  border:1px solid #E6B65C
+  display:inline-block;margin:6px;padding:13px 24px;
+  background:#E6B65C;color:#000;text-decoration:none;
+  font-weight:bold;border-radius:6px
 }
 
-/* NOTICE BAR */
+/* NOTICE */
 .notice-wrap{
-  margin:18px auto 0;
-  width:100%;
-  max-width:420px;
-  height:90px;
-  border:1px solid #E6B65C;
-  background:transparent;   /* ✅ transparent */
-  overflow:hidden;
-  position:relative;
+  margin:18px auto;width:100%;max-width:420px;height:90px;
+  border:1px solid #E6B65C;overflow:hidden;position:relative
 }
-.notice-inner{
-  position:absolute;
-  width:100%;
-  top:0;
-}
+.notice-inner{position:absolute;width:100%;top:0}
 .notice-item{
-  text-align:center;
-  padding:6px 10px;
-  color:#7b1e1e;
-  font-weight:bold;
-  font-size:14px;
+  text-align:center;padding:6px 10px;
+  color:#fff;font-weight:bold
 }
 
 /* SECTIONS */
-.section{
-  padding:45px 20px;
-  text-align:center;
-  border-top:1px solid #222
-}
+.section{padding:45px 20px;text-align:center;border-top:1px solid #222}
 .section h2{color:#E6B65C;margin-bottom:14px}
 .section h3{color:#FFD27D;margin-top:14px}
 .section p{color:#ccc;margin:6px 0}
 
-/* FOOTER */
-.footer{
-  padding:16px;
-  text-align:center;
-  background:#000;
-  font-size:14px;
-  color:#aaa
+/* HALL OF FAME */
+.hof-box{
+  max-width:420px;margin:0 auto;
+  border:1px solid #E6B65C;padding:15px
 }
+.hof-slide{display:none}
+.hof-slide.active{display:block}
+.hof-item{margin:6px 0;color:#ccc}
+.hof-title{color:#FFD27D;margin-bottom:10px}
 
-/* =========================
-   DESKTOP ONLY CHANGES
-========================= */
+/* FOOTER */
+.footer{padding:16px;text-align:center;background:#000;font-size:14px;color:#aaa}
+
+/* DESKTOP */
 @media (min-width:1024px){
-
-  /* Layout */
-  .hero{align-items:flex-start}
-  .hero-content{margin-top:10px}
+  body{font-size:200%}
   .hero-logo{width:700px;height:700px}
   .intro-logo{width:550px;height:550px}
-
-  /* 🔥 FONT SIZE DOUBLE (DESKTOP ONLY) */
-  body{
-    font-size:200%;
-  }
-
-  .notice-item{
-    font-size:1.6rem;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
-<div class="intro">
-  <img src="logo.png" class="intro-logo">
+<div class="intro"><img src="logo.png" class="intro-logo"></div>
+
+<div class="hero">
+<div class="hero-content">
+
+<img src="logo.png" class="hero-logo">
+<h1>FinalCircle ESports</h1>
+<p>WE BUILD TRUST</p>
+
+<div class="btn-group">
+<a href="#daily" class="btn">Daily Scrims</a>
+<a href="#weekly" class="btn">Weekly League</a>
+<a href="#hof" class="btn">Hall of Fame</a>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-content">
-
-    <img src="logo.png" class="hero-logo">
-
-    <h1>FinalCircle ESports</h1>
-    <p>WE BUILD TRUST</p>
-
-    <div class="btn-group">
-      <a href="#daily" class="btn">Daily Scrims</a>
-      <a href="#weekly" class="btn btn-outline">Weekly League</a>
-      <a href="#rules" class="btn btn-outline">Rules</a>
-    </div>
-
-    <!-- NOTICE BAR -->
-    <div class="notice-wrap" id="noticeWrap">
-      <div class="notice-inner" id="noticeInner">
-        <div class="notice-item">🔔 Elite weekly league starts 1 March</div>
-        <div class="notice-item">🔔 Daily paid scrims starts 15 Feb</div>
-        <div class="notice-item">🔔 TDM Revenge scrims starts 5 Feb</div>
-      </div>
-    </div>
-
+<div class="notice-wrap" id="noticeWrap">
+  <div class="notice-inner" id="noticeInner">
+    <div class="notice-item">Elite weekly league starts 1 March</div>
+    <div class="notice-item">Daily paid scrims starts 15 Feb</div>
+    <div class="notice-item">TDM Revenge scrims starts 5 Feb</div>
   </div>
+</div>
+
+</div>
 </div>
 
 <!-- DAILY -->
 <div class="section" id="daily">
 <h2>Daily Paid Scrims</h2>
-<p>Game: Battlegrounds Mobile India (BGMI)</p>
 <p>Entry Fee: ₹50 / Team</p>
-<p>Mode: Squad (TPP)</p>
-<p>Maps: Erangel / Miramar</p>
-<p>Matches: 3 Matches Per Day</p>
-<p>Total Teams: 20</p>
+<p>Matches: 3 Per Day</p>
 </div>
 
 <!-- WEEKLY -->
@@ -212,52 +123,61 @@ body{
 <p>Duration: 7 Days</p>
 </div>
 
-<!-- RULES -->
-<div class="section" id="rules">
-<h2>Rules & Regulations</h2>
-<p>Gameplay recording mandatory</p>
+<!-- HALL OF FAME -->
+<div class="section" id="hof">
+<h2>Hall of Fame</h2>
+
+<div class="hof-box">
+
+<!-- WEEKLY -->
+<div class="hof-slide active">
+<h3 class="hof-title">Weekly Elite League</h3>
+<div class="hof-item">1st – Team Alpha | UID</div>
+<div class="hof-item">2nd – Team Beta | UID</div>
+<div class="hof-item">3rd – Team Gamma | UID</div>
+<div class="hof-item">Top Kill (Team) – Team X | UID</div>
+<div class="hof-item">Top Kill (Individual) – Player Y | UID</div>
+</div>
+
+<!-- DAILY -->
+<div class="hof-slide">
+<h3 class="hof-title">Daily Scrims</h3>
+<div class="hof-item">1st – Team One | UID</div>
+<div class="hof-item">2nd – Team Two | UID</div>
+<div class="hof-item">3rd – Team Three | UID</div>
+<div class="hof-item">Top Kill (Team) – Team Z | UID</div>
+</div>
+
+</div>
 </div>
 
 <div class="footer">
-© 2026 Final Circle eSports™ | Official Website
+© 2026 Final Circle eSports | Skill Based Game | No Gambling
 </div>
 
-<!-- NOTICE SCROLL SCRIPT -->
 <script>
-const wrap = document.getElementById("noticeWrap");
-const inner = document.getElementById("noticeInner");
-
-let speed = 0.6;
-let pos = 0;
-
-inner.innerHTML += inner.innerHTML;
-const itemHeight = inner.children[0].offsetHeight;
-const totalHeight = itemHeight * (inner.children.length / 2);
-
-function scrollNotice(){
-  pos -= speed;
-  if(Math.abs(pos) >= totalHeight){
-    pos = 0;
-  }
-  inner.style.transform = `translateY(${pos}px)`;
-  requestAnimationFrame(scrollNotice);
+/* NOTICE SCROLL */
+let nPos=0;
+const nInner=document.getElementById("noticeInner");
+nInner.innerHTML+=nInner.innerHTML;
+const nH=nInner.children[0].offsetHeight;
+const nTotal=nH*(nInner.children.length/2);
+function nScroll(){
+  nPos-=0.6;
+  if(Math.abs(nPos)>=nTotal)nPos=0;
+  nInner.style.transform=`translateY(${nPos}px)`;
+  requestAnimationFrame(nScroll);
 }
-scrollNotice();
+nScroll();
 
-wrap.addEventListener("wheel", e=>{
-  e.preventDefault();
-  pos -= e.deltaY * 0.3;
-});
-
-let touchStartY = 0;
-wrap.addEventListener("touchstart", e=>{
-  touchStartY = e.touches[0].clientY;
-});
-wrap.addEventListener("touchmove", e=>{
-  const y = e.touches[0].clientY;
-  pos += (y - touchStartY);
-  touchStartY = y;
-});
+/* HALL OF FAME SLIDER */
+let hofIndex=0;
+const slides=document.querySelectorAll(".hof-slide");
+setInterval(()=>{
+  slides[hofIndex].classList.remove("active");
+  hofIndex=(hofIndex+1)%slides.length;
+  slides[hofIndex].classList.add("active");
+},4000);
 </script>
 
 </body>
