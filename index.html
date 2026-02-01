@@ -6,9 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
 /* =========================
-   GLOBAL RESET
+   GLOBAL
 ========================= */
 *{
   margin:0;
@@ -22,7 +21,7 @@ body{
 }
 
 /* =========================
-   INTRO SCREEN
+   INTRO
 ========================= */
 .intro{
   position:fixed;
@@ -62,7 +61,7 @@ body{
 }
 
 /* =========================
-   HERO SECTION
+   HERO
 ========================= */
 .hero{
   min-height:100vh;
@@ -72,8 +71,6 @@ body{
   padding:30px;
   background:url("banner.jpg") center/cover no-repeat;
 }
-
-/* 👇 THIS IS THE REAL MOVING BLOCK */
 .hero-content{
   display:flex;
   flex-direction:column;
@@ -89,9 +86,7 @@ body{
   animation:finalGlow 3s ease-in-out infinite;
 }
 
-/* =========================
-   🔥 FINAL GOLD GLOW (TRANSPARENT ONLY)
-========================= */
+/* 🔥 CLEAN GOLD GLOW – TRANSPARENT ONLY */
 @keyframes finalGlow{
   0%,100%{
     filter:
@@ -117,7 +112,6 @@ body{
   }
 }
 
-/* TEXT */
 .hero h1{
   color:#E6B65C;
   font-size:3rem;
@@ -149,7 +143,7 @@ body{
   border:1px solid #E6B65C
 }
 
-/* NOTICE BAR */
+/* NOTICE */
 .notice-wrap{
   margin:18px auto 0;
   width:100%;
@@ -171,7 +165,7 @@ body{
 }
 
 /* =========================
-   CONTENT SECTIONS
+   SECTIONS
 ========================= */
 .section{
   padding:45px 20px;
@@ -191,6 +185,14 @@ body{
 }
 .rules li{margin-bottom:9px}
 
+/* CONTACT COLORS */
+.whatsapp{background:#25D366;color:#000}
+.instagram{background:linear-gradient(45deg,#feda75,#d62976,#962fbf,#4f5bd5)}
+.telegram{background:#229ED9}
+.discord{background:#5865F2}
+.youtube{background:#FF0000}
+.email{background:#444}
+
 /* FOOTER */
 .footer{
   padding:16px;
@@ -201,7 +203,7 @@ body{
 }
 
 /* =========================
-   📱 MOBILE (UNCHANGED)
+   MOBILE – NO CHANGE
 ========================= */
 @media (max-width: 768px){
   .hero{
@@ -210,28 +212,28 @@ body{
 }
 
 /* =========================
-   🖥️ DESKTOP ONLY POSITION FIX
+   DESKTOP – CORRECT PLACEMENT
 ========================= */
 @media (min-width: 1024px){
   .hero-content{
-    margin-top:320px;   /* ← यही adjust करना है */
+    margin-top:320px;   /* soldier ke head ke upar wali empty space */
   }
 }
-
 </style>
 </head>
 
 <body>
 
+<!-- INTRO -->
 <div class="intro">
   <img src="logo.png" class="intro-logo">
 </div>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-content">
 
     <img src="logo.png" class="hero-logo">
-
     <h1>Final Circle eSports</h1>
     <p>WE BUILD TRUST</p>
 
@@ -298,9 +300,23 @@ body{
 </ul>
 </div>
 
+<!-- CONTACT -->
+<div class="section">
+<h2>Contact Us</h2>
+
+<a href="mailto:finalcircleesports@gmail.com" class="btn email">Mail Us</a><br><br>
+
+<a href="PASTE_WHATSAPP_LINK" class="btn whatsapp">WhatsApp</a>
+<a href="PASTE_INSTAGRAM_LINK" class="btn instagram">Instagram</a><br><br>
+
+<a href="PASTE_TELEGRAM_LINK" class="btn telegram">Telegram</a>
+<a href="PASTE_DISCORD_LINK" class="btn discord">Discord</a>
+<a href="PASTE_YOUTUBE_LINK" class="btn youtube">YouTube</a>
+</div>
+
 <div class="footer">
 © 2026 Final Circle eSports™ | Official Website
 </div>
 
 </body>
-         </html>
+   </html>
