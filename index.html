@@ -6,73 +6,155 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0b0b0b;color:#fff}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif
+}
+body{
+  background:#0b0b0b;
+  color:#fff
+}
 
-/* INTRO */
+/* ================= INTRO ================= */
 .intro{
-  position:fixed;inset:0;background:#000;
-  display:flex;align-items:center;justify-content:center;
-  z-index:9999;animation:introFade 1s ease forwards;animation-delay:3s
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  animation:introFade 1s ease forwards;
+  animation-delay:3s;
 }
 .intro-logo{
-  width:220px;height:220px;object-fit:contain;
-  opacity:0;animation:logoFadeIn 2s ease forwards
+  width:220px;
+  height:220px;
+  object-fit:contain;
+  opacity:0;
+  animation:logoFadeIn 2s ease forwards;
 }
-@keyframes logoFadeIn{from{opacity:0;transform:scale(1.2)}to{opacity:1}}
-@keyframes introFade{to{opacity:0;visibility:hidden}}
+@keyframes logoFadeIn{
+  from{opacity:0;transform:scale(1.2)}
+  to{opacity:1}
+}
+@keyframes introFade{
+  to{opacity:0;visibility:hidden}
+}
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
   min-height:100vh;
   background:url("banner.jpg") center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:30px
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px;
 }
-.hero-content{display:flex;flex-direction:column;align-items:center}
-.hero-logo{width:280px;height:280px;object-fit:contain;margin-bottom:-10px}
-.hero h1{color:#E6B65C;font-size:3rem}
-.hero p{color:#ccc;letter-spacing:2px}
+.hero-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.hero-logo{
+  width:280px;
+  height:280px;
+  object-fit:contain;
+}
+.hero h1{
+  color:#E6B65C;
+  font-size:3rem;
+}
+.hero p{
+  color:#ccc;
+  letter-spacing:2px;
+}
 
-/* BUTTONS */
-.btn-group{margin-top:-10px}
+/* ================= BUTTONS ================= */
+.btn-group{margin-top:10px}
 .btn{
-  display:inline-block;margin:6px;padding:13px 24px;
-  background:#E6B65C;color:#000;text-decoration:none;
-  font-weight:bold;border-radius:6px
+  display:inline-block;
+  margin:6px;
+  padding:13px 24px;
+  background:#E6B65C;
+  color:#000;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:6px
 }
 
-/* NOTICE */
+/* ================= NOTICE ================= */
 .notice-wrap{
-  margin:18px auto;width:100%;max-width:420px;height:90px;
-  border:1px solid #E6B65C;overflow:hidden;position:relative
+  margin:18px auto;
+  width:100%;
+  max-width:420px;
+  height:90px;
+  border:1px solid #E6B65C;
+  overflow:hidden;
+  position:relative;
 }
-.notice-inner{position:absolute;width:100%;top:0}
+.notice-inner{
+  position:absolute;
+  width:100%;
+  top:0;
+}
 .notice-item{
-  text-align:center;padding:6px 10px;
-  color:#fff;font-weight:bold
+  text-align:center;
+  padding:6px 10px;
+  color:#fff;
+  font-weight:bold;
 }
 
-/* SECTIONS */
-.section{padding:45px 20px;text-align:center;border-top:1px solid #222}
-.section h2{color:#E6B65C;margin-bottom:14px}
-.section h3{color:#FFD27D;margin-top:14px}
-.section p{color:#ccc;margin:6px 0}
-
-/* HALL OF FAME */
-.hof-box{
-  max-width:420px;margin:0 auto;
-  border:1px solid #E6B65C;padding:15px
+/* ================= SECTIONS ================= */
+.section{
+  padding:45px 20px;
+  text-align:center;
+  border-top:1px solid #222
 }
-.hof-slide{display:none}
-.hof-slide.active{display:block}
-.hof-item{margin:6px 0;color:#ccc}
-.hof-title{color:#FFD27D;margin-bottom:10px}
+.section h2{
+  color:#E6B65C;
+  margin-bottom:14px
+}
+.section p{
+  color:#ccc;
+  margin:6px 0
+}
 
-/* FOOTER */
-.footer{padding:16px;text-align:center;background:#000;font-size:14px;color:#aaa}
+/* ================= HALL OF FAME ================= */
+.hof-wrapper{
+  max-width:500px;
+  margin:0 auto;
+  border:1px solid #E6B65C;
+  padding:20px;
+}
+.hof-title{
+  color:#FFD27D;
+  margin-bottom:15px;
+}
+.hof-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.hof-grid img{
+  width:100%;
+  border-radius:6px;
+  border:1px solid #333;
+}
 
-/* DESKTOP */
+/* ================= FOOTER ================= */
+.footer{
+  padding:16px;
+  text-align:center;
+  background:#000;
+  font-size:14px;
+  color:#aaa
+}
+
+/* ================= DESKTOP ================= */
 @media (min-width:1024px){
   body{font-size:200%}
   .hero-logo{width:700px;height:700px}
@@ -83,8 +165,12 @@ body{background:#0b0b0b;color:#fff}
 
 <body>
 
-<div class="intro"><img src="logo.png" class="intro-logo"></div>
+<!-- INTRO -->
+<div class="intro">
+  <img src="logo.png" class="intro-logo">
+</div>
 
+<!-- HERO -->
 <div class="hero">
 <div class="hero-content">
 
@@ -93,16 +179,16 @@ body{background:#0b0b0b;color:#fff}
 <p>WE BUILD TRUST</p>
 
 <div class="btn-group">
-<a href="#daily" class="btn">Daily Scrims</a>
-<a href="#weekly" class="btn">Weekly League</a>
-<a href="#hof" class="btn">Hall of Fame</a>
+  <a href="#daily" class="btn">Daily Scrims</a>
+  <a href="#weekly" class="btn">Weekly League</a>
+  <a href="#hof" class="btn">Hall of Fame</a>
 </div>
 
 <div class="notice-wrap" id="noticeWrap">
   <div class="notice-inner" id="noticeInner">
-    <div class="notice-item">Elite weekly league starts 1 March</div>
-    <div class="notice-item">Daily paid scrims starts 15 Feb</div>
-    <div class="notice-item">TDM Revenge scrims starts 5 Feb</div>
+    <div class="notice-item">Elite Weekly League starts 1 March</div>
+    <div class="notice-item">Daily Paid Scrims starts 15 Feb</div>
+    <div class="notice-item">TDM Revenge starts 5 Feb</div>
   </div>
 </div>
 
@@ -123,61 +209,45 @@ body{background:#0b0b0b;color:#fff}
 <p>Duration: 7 Days</p>
 </div>
 
-<!-- HALL OF FAME -->
+<!-- HALL OF FAME (WEEKLY ONLY) -->
 <div class="section" id="hof">
-<h2>Hall of Fame</h2>
+<h2>Hall of Fame – Weekly Elite League</h2>
 
-<div class="hof-box">
+<div class="hof-wrapper">
+<h3 class="hof-title">Weekly Champions</h3>
 
-<!-- WEEKLY -->
-<div class="hof-slide active">
-<h3 class="hof-title">Weekly Elite League</h3>
-<div class="hof-item">1st – Team Alpha | UID</div>
-<div class="hof-item">2nd – Team Beta | UID</div>
-<div class="hof-item">3rd – Team Gamma | UID</div>
-<div class="hof-item">Top Kill (Team) – Team X | UID</div>
-<div class="hof-item">Top Kill (Individual) – Player Y | UID</div>
+<div class="hof-grid">
+  <!-- POSITIONS FIXED – IMAGE CHANGE ONLY -->
+  <img src="hall-of-fame/wt1.png" alt="Weekly Top 1">
+  <img src="hall-of-fame/wt2.png" alt="Weekly Top 2">
+  <img src="hall-of-fame/wt3.png" alt="Weekly Top 3">
+  <img src="hall-of-fame/tkt.png" alt="Top Kill Team">
+  <img src="hall-of-fame/tki.png" alt="Top Kill Individual">
 </div>
-
-<!-- DAILY -->
-<div class="hof-slide">
-<h3 class="hof-title">Daily Scrims</h3>
-<div class="hof-item">1st – Team One | UID</div>
-<div class="hof-item">2nd – Team Two | UID</div>
-<div class="hof-item">3rd – Team Three | UID</div>
-<div class="hof-item">Top Kill (Team) – Team Z | UID</div>
-</div>
-
 </div>
 </div>
 
 <div class="footer">
-© 2026 Final Circle eSports | Skill Based Game | No Gambling
+© 2026 Final Circle eSports™ <br>
+Skill Based Game • No Gambling / No Betting
 </div>
 
+<!-- NOTICE SCROLL SCRIPT -->
 <script>
-/* NOTICE SCROLL */
-let nPos=0;
-const nInner=document.getElementById("noticeInner");
-nInner.innerHTML+=nInner.innerHTML;
-const nH=nInner.children[0].offsetHeight;
-const nTotal=nH*(nInner.children.length/2);
-function nScroll(){
-  nPos-=0.6;
-  if(Math.abs(nPos)>=nTotal)nPos=0;
-  nInner.style.transform=`translateY(${nPos}px)`;
-  requestAnimationFrame(nScroll);
-}
-nScroll();
+const wrap=document.getElementById("noticeWrap");
+const inner=document.getElementById("noticeInner");
+let pos=0,speed=0.6;
+inner.innerHTML+=inner.innerHTML;
+const h=inner.children[0].offsetHeight;
+const total=h*(inner.children.length/2);
 
-/* HALL OF FAME SLIDER */
-let hofIndex=0;
-const slides=document.querySelectorAll(".hof-slide");
-setInterval(()=>{
-  slides[hofIndex].classList.remove("active");
-  hofIndex=(hofIndex+1)%slides.length;
-  slides[hofIndex].classList.add("active");
-},4000);
+function scrollNotice(){
+  pos-=speed;
+  if(Math.abs(pos)>=total)pos=0;
+  inner.style.transform=`translateY(${pos}px)`;
+  requestAnimationFrame(scrollNotice);
+}
+scrollNotice();
 </script>
 
 </body>
