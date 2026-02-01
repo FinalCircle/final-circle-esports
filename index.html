@@ -34,20 +34,17 @@ body{
   animation:introFade 1s ease forwards;
   animation-delay:3s;
 }
-
 .intro-logo{
-  width:220px;           /* MOBILE DEFAULT */
+  width:220px;
   height:220px;
   object-fit:contain;
   opacity:0;
   animation:logoFadeIn 2s ease forwards;
 }
-
 @keyframes logoFadeIn{
   from{opacity:0;transform:scale(1.2)}
   to{opacity:1;transform:scale(1)}
 }
-
 @keyframes introFade{
   to{opacity:0;visibility:hidden}
 }
@@ -65,6 +62,7 @@ body{
   padding:30px;
 }
 
+/* MOBILE DEFAULT – SAME AS BEFORE */
 .hero-content{
   display:flex;
   flex-direction:column;
@@ -73,7 +71,7 @@ body{
 
 /* LOGO – MOBILE DEFAULT */
 .hero-logo{
-  width:280px;           /* MOBILE DEFAULT */
+  width:280px;
   height:280px;
   object-fit:contain;
   margin-bottom:-10px;
@@ -169,20 +167,27 @@ body{
 }
 
 /* =========================
-   DESKTOP ONLY – LOGO DOUBLE SIZE
+   DESKTOP ONLY – MOVE CONTENT UP
 ========================= */
 @media (min-width:1024px){
 
+  .hero{
+    align-items:flex-start;   /* 👈 top side */
+  }
+
+  .hero-content{
+    margin-top:120px;         /* 👈 yahan se upar niche control */
+  }
+
   .hero-logo{
-    width:560px;       /* DOUBLE OF 280 */
+    width:560px;
     height:560px;
   }
 
   .intro-logo{
-    width:440px;       /* DOUBLE OF 220 */
+    width:440px;
     height:440px;
   }
-
 }
 </style>
 </head>
