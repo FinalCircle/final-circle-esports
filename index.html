@@ -1,449 +1,334 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>FinalCircle ESports</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0b0b0b;color:#fff}
-
-/* INTRO */
-.intro{
-  position:fixed;inset:0;background:#000;
-  display:flex;align-items:center;justify-content:center;
-  z-index:9999;animation:introFade 1s ease forwards;animation-delay:3s
-}
-.intro-logo{width:220px;height:220px;object-fit:contain;opacity:0;animation:logoFadeIn 2s ease forwards}
-@keyframes logoFadeIn{from{opacity:0;transform:scale(1.2)}to{opacity:1}}
-@keyframes introFade{to{opacity:0;visibility:hidden}}
-
-/* HERO */
-.hero{
-  min-height:100vh;background:url("banner.jpg") center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:30px
-}
-.hero-content{display:flex;flex-direction:column;align-items:center}
-.hero-logo{width:280px;height:280px;object-fit:contain}
-.hero h1{color:#E6B65C;font-size:3rem}
-.hero p{color:#ccc;letter-spacing:2px}
-
-/* BUTTONS */
-.btn-group{
-  margin-top:14px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  max-width:360px
-}
-.btn{
-  margin:6px;
-  padding:13px 24px;
-  background:#E6B65C;
-  color:#000;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:6px
-}
-@media(max-width:767px){
-  .btn-group a:nth-child(-n+3){width:30%}
-  .btn-group a:nth-child(4),
-  .btn-group a:nth-child(5){width:45%}
-  .btn-group a:nth-child(6){width:92%}
-}
-
-/* NOTICE */
-.notice-wrap{
-  margin:18px auto;width:100%;max-width:420px;height:90px;
-  border:1px solid #E6B65C;overflow:hidden;position:relative
-}
-.notice-inner{position:absolute;width:100%;top:0}
-.notice-item{text-align:center;padding:6px 10px;color:#fff;font-weight:bold}
-
-/* SECTION */
-.section{padding:55px 20px;border-top:1px solid #222}
-.section h2{text-align:center;color:#E6B65C;margin-bottom:25px}
-
-/* HALL OF FAME */
-.hof-wrapper{
-  max-width:620px;margin:0 auto;
-  border:1px solid #E6B65C;padding:20px
-}
-.hof-item{
-  display:flex;align-items:center;gap:14px;margin-bottom:18px
-}
-.hof-label{
-  min-width:160px;font-weight:bold;color:#FFD27D
-}
-.hof-item img{
-  max-width:320px;width:100%;
-  border-radius:6px;border:1px solid #333
-}
-
-/* TEAM POSITION TABLE */
-.team-position-box{
-  max-width:720px;
-  margin:0 auto;
-  border:1px solid #E6B65C;
-  padding:20px;
-  text-align:center
-}
-.team-position-box img{
-  width:100%;
-  max-width:680px;
-  border-radius:6px;
-  border:1px solid #333
-}
-
-/* SCRIMS GRID */
-.scrims-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:25px;
-  max-width:1200px;
-  margin:0 auto
-}
-.scrim-card{
-  border:1px solid #E6B65C;
-  padding:22px;
-  text-align:center
-}
-.scrim-card h3{color:#FFD27D;margin-bottom:12px}
-.scrim-card p{color:#ccc;margin:6px 0}
-
-/* SCRIM BUTTONS */
-.scrim-btns{margin-top:15px}
-.scrim-btns a{
-  margin:6px;
-  padding:10px 18px;
-  background:#E6B65C;
-  color:#000;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:5px;
-  display:inline-block
-}
-
-/* POINT TABLE */
-.point-table-box{
-  max-width:600px;
-  margin:0 auto;
-  border:1px solid #E6B65C;
-  padding:20px
-}
-.point-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:8px 0;
-  border-bottom:1px solid #222;
-  color:#ccc
-}
-.point-left{width:45%;text-align:left}
-.point-mid{width:10%;text-align:center;color:#E6B65C;font-weight:bold}
-.point-right{width:45%;text-align:right}
-.point-note{
-  margin-top:15px;
-  text-align:center;
-  color:#E6B65C;
-  font-weight:bold
-}
-
-/* CONTACT */
-.contact-btns{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  max-width:420px;
-  margin:0 auto
-}
-.contact-btns a{
-  padding:12px;
-  text-align:center;
-  font-weight:bold;
-  text-decoration:none;
-  border-radius:6px;
-  color:#000
-}
-.whatsapp{background:#25D366}
-.instagram{background:linear-gradient(45deg,#feda75,#d62976,#962fbf,#4f5bd5);color:#fff}
-.telegram{background:#229ED9;color:#fff}
-.discord{background:#5865F2;color:#fff}
-.youtube{background:#FF0000;color:#fff}
-.email{background:#E6B65C}
-
-/* FOOTER */
-.footer{
-  text-align:center;
-  padding:20px;
-  background:#000;
-  color:#aaa;
-  font-size:14px
-}
-.footer a{color:#888;margin:0 6px;text-decoration:none}
-
-/* DESKTOP */
-@media(min-width:1024px){
-  body{font-size:120%}
-  .hero-logo{width:520px;height:520px}
-  .intro-logo{width:550px;height:550px}
-  .scrims-grid{grid-template-columns:1fr 1fr 1fr}
-}/* ================================
-   MOBILE PNG ALIGNMENT FIX (SAFE)
-   ONLY Hall of Fame & Team Position
-   Desktop view untouched
-================================ */
-
-/* Ratio-safe images */
-.hof-item img,
-.team-position-box img{
-  max-width:100%;
-  height:auto;
-  object-fit:contain;
-  display:block;
-}
-
-/* Mobile-only correction */
-@media (max-width:768px){
-
-  /* Hall of Fame: label upar, image niche */
-  .hof-item{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .hof-label{
-    min-width:auto;
-    margin-bottom:6px;
-  }
-
-  /* Overflow safety */
-  .hof-wrapper,
-  .team-position-box{
-    overflow:hidden;
-  }
-                                      }
-  /* MOBILE ONLY – Hall of Fame & Team Position */
-@media (max-width:768px){
-
-  .hof-item{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .hof-label{
-    min-width:auto;
-    margin-bottom:6px;
-  }
-
-  .hof-wrapper,
-  .team-position-box{
-    overflow:hidden;
-  }
-          }
-  /* DESKTOP SAFETY – do not change layout */
-@media (min-width:1024px){
-  .hof-item{
-    flex-direction:row;
-    align-items:center;
-  }
-
-  .hof-item img{
-    max-width:320px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="intro"><img src="logo.png" class="intro-logo"></div>
-
-<div class="hero">
-<div class="hero-content">
-
-<img src="logo.png" class="hero-logo">
-<h1>FinalCircle ESports</h1>
-<p>WE BUILD TRUST</p>
-
-<div class="btn-group">
-  <a href="#daily" class="btn">Daily Scrims</a>
-  <a href="#weekly" class="btn">Weekly League</a>
-  <a href="#tdm" class="btn">TDM Revenge</a>
-  <a href="#hof" class="btn">Hall of Fame</a>
-  <a href="#rules" class="btn">Rules & Regulations</a>
-  <a href="#contact" class="btn">Contact Us</a>
-</div>
-
-<div class="notice-wrap">
-  <div class="notice-inner" id="noticeInner">
-    <div class="notice-item">🔔Elite Weekly League starts 1 March</div>
-    <div class="notice-item">🔔Daily Paid Scrims starts 15 Feb</div>
-    <div class="notice-item">🔔TDM Revenge starts 5 Feb</div>
-  </div>
-</div>
-
-</div>
-</div>
-
-<!-- HALL OF FAME -->
-<div class="section" id="hof">
-<h2>Hall of Fame – Weekly Elite League</h2>
-<div class="hof-wrapper">
-  <div class="hof-item"><div class="hof-label">🥇 Winner</div><img src="hall-of-fame/wt1.png"></div>
-  <div class="hof-item"><div class="hof-label">🥈 Runner Up</div><img src="hall-of-fame/wt2.png"></div>
-  <div class="hof-item"><div class="hof-label">🥉 3rd</div><img src="hall-of-fame/wt3.png"></div>
-  <div class="hof-item"><div class="hof-label">🔥 Most Kill Team</div><img src="hall-of-fame/tkt.png"></div>
-  <div class="hof-item"><div class="hof-label">🎯 Most Kill Player</div><img src="hall-of-fame/tki.png"></div>
-</div>
-</div>
-
-<!-- TEAM POSITION TABLE -->
-<div class="section">
-<h2>Team Position Table</h2>
-<div class="team-position-box">
-  <img src="team-position-table.png" alt="Team Position Table">
-</div>
-</div>
-
-<!-- SCRIMS -->
-<div class="section">
-<h2>Our Scrims</h2>
-
-<div class="scrims-grid">
-
-<div class="scrim-card" id="daily">
-<h3>Daily Paid Scrims</h3>
-<p>Game: BGMI</p>
-<p>Entry: ₹50 / Team</p>
-<p>Mode: Squad (TPP)</p>
-<p>Maps: Erangel / Miramar</p>
-<p>Matches: 3 per day</p>
-<p>Teams: 20</p>
-<p>Prize Pool: ₹750</p>
-<p>Sunday Dhamaka: prizepool -1000 • Top 3/day FREE entry</p>
-<p>Teams: 20 = 3×6(winners)+2(🃏wildcard)</p>
-<div class="scrim-btns">
-  <a href="PASTE_DAILY_FORM_LINK" target="_blank">Join</a>
-  <a href="dinfo.pdf" target="_blank">More Information</a>
-</div>
-</div>
-
-<div class="scrim-card" id="weekly">
-<h3>Weekly Elite League</h3>
-<p>Entry: ₹600 / Team</p>
-<p>Fixed Rooster</p>
-<p>No Daily ragistration Headache</p>
-<p>Duration: 7 Days</p>
-<p>Matches: 3 per day</p>
-<b>Total Teams: 20</b></p>
-<p>• 16 Teams = Paid Slots</p>
-<p>• 3 Teams = Previous Week Top 3</p>
-<p>• 1 Team = Invitation Slot</p>
-<p>Prize Pool: ₹8000</p>
-<p>Top Kill Team: ₹500</p>
-<p>Top Kill Individual: ₹500</p>
-<p>Online streaming on YouTube</p>
-<div class="scrim-btns">
-  <a href="PASTE_WEEKLY_FORM_LINK" target="_blank">Join</a>
-  <a href="winfo.pdf" target="_blank">More Information</a>
-</div>
-</div>
-
-<div class="scrim-card" id="tdm">
-<h3>TDM Revenge Scrims</h3>
-<p>Entry: ₹10 / Player(4v4) •single Entry or squad both allows</p>
-<p>Entry: ₹40 / Player (1v1) • Rendom or your custom challenger</p>
-<p>Per Kill: ₹1</p>
-<p>Per Death Penalty: ₹0.5</p>
-<p>Final Payout = (Kills × 1) − (Deaths × 0.5)</p>
-<div class="scrim-btns">
-  <a href="PASTE_TDM_FORM_LINK" target="_blank">Join</a>
-  <a href="tinfo.pdf" target="_blank">More Information</a>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- POINT TABLE -->
-<div class="section">
-<h2>Point Distribution Table</h2>
-<div class="point-table-box">
-  <div class="point-row"><div class="point-left">🥇 Winner</div><div class="point-mid">=</div><div class="point-right">15</div></div>
-  <div class="point-row"><div class="point-left">🥈 Runner Up</div><div class="point-mid">=</div><div class="point-right">12</div></div>
-  <div class="point-row"><div class="point-left">🥉 3rd</div><div class="point-mid">=</div><div class="point-right">10</div></div>
-  <div class="point-row"><div class="point-left">4th Place</div><div class="point-mid">=</div><div class="point-right">8</div></div>
-  <div class="point-row"><div class="point-left">5th Place</div><div class="point-mid">=</div><div class="point-right">6</div></div>
-  <div class="point-row"><div class="point-left">6th Place</div><div class="point-mid">=</div><div class="point-right">4</div></div>
-  <div class="point-row"><div class="point-left">7th Place</div><div class="point-mid">=</div><div class="point-right">2</div></div>
-  <div class="point-row"><div class="point-left">8th – 12th</div><div class="point-mid">=</div><div class="point-right">1</div></div>
-  <div class="point-row"><div class="point-left">13th – 15th</div><div class="point-mid">=</div><div class="point-right">0</div></div>
-  <div class="point-row"><div class="point-left">16th – 20th</div><div class="point-mid">=</div><div class="point-right">-1</div></div>
-  <div class="point-row"><div class="point-left">20th – 25th</div><div class="point-mid">=</div><div class="point-right">-2</div></div>
-  <div class="point-row"><div class="point-left">Per Kill</div><div class="point-mid">=</div><div class="point-right">1 Point</div></div>
-</div>
-<div class="point-note">
-This point table is applicable for Daily Paid Scrims and Weekly Elite League
-</div>
-</div>
-
-<!-- RULES -->
-<div class="section" id="rules">
-<h2>Rules & Regulations</h2>
-<p>• Only BGMI official version allowed</p>
-<p>• Any player or substitute with a BGMI ID level below 35 is not allowed.
-     If such a player joins the lobby, they will be removed immediately, and the team must continue the match with a player loss.</p>
-<p>• If the entire team is found to have BGMI ID levels below 35, the whole team will be removed from the lobby, and no refund will be provided.</p>
-<p>• Emulator / iPad not allowed</p>
-<p>• Any use of hacks, mods, or scripts will result in a permanent ban with no refund.</p>
-<p>• Gameplay recording mandatory</p>
-<p>• If a team is eliminated by a hacker, valid gameplay proof must be submitted.
-     After verification, a free slot will be provided the next day if the claim is genuine.</p>
-<p>• No refund will be provided after slot booking under any circumstances.</p>
-<p>• The organizer’s decision will be final.</p>
-</div>
-
-<!-- CONTACT -->
-<div class="section" id="contact">
-<h2>Contact Us</h2>
-<div class="contact-btns">
-  <a href="PASTE_WHATSAPP_LINK" class="whatsapp">WhatsApp</a>
-  <a href="PASTE_INSTAGRAM_LINK" class="instagram">Instagram</a>
-  <a href="PASTE_TELEGRAM_LINK" class="telegram">Telegram</a>
-  <a href="PASTE_DISCORD_LINK" class="discord">Discord</a>
-  <a href="PASTE_YOUTUBE_LINK" class="youtube">YouTube</a>
-  <a href="mailto:finalcircleesports@gmail.com" class="email">Mail Us</a>
-</div>
-</div>
-
-<div class="footer">
-© 2026 Final Circle eSports™ |
-<a href="about-us.pdf" target="_blank">About Us</a> |
-<a href="privacy-policy.pdf" target="_blank">Privacy Policy</a> |
-<a href="terms-and-conditions.pdf" target="_blank">Terms & Conditions</a> |
-<a href="disclaimer.pdf" target="_blank">Disclaimer</a><br><br>
-This is the official website of FinalCircle ESports.  
-This platform does not promote betting, gambling, or any luck-based games.  
-All tournaments are skill-based, rule-driven, and conducted for fair competition only.
-</div>
-
-<script>
-const inner=document.getElementById("noticeInner");
-let pos=0,speed=0.5;
-inner.innerHTML+=inner.innerHTML;
-const h=inner.children[0].offsetHeight;
-const total=h*(inner.children.length/2);
-function scrollNotice(){
-  pos-=speed;
-  if(Math.abs(pos)>=total)pos=0;
-  inner.style.transform=`translateY(${pos}px)`;
-  requestAnimationFrame(scrollNotice);
-}
-scrollNotice();
-</script>
-
-</body>
-  </html>
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<title>FinalCircle ESports</title>  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <style>  
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}  
+body{background:#0b0b0b;color:#fff}  
+  
+/* INTRO */  
+.intro{  
+  position:fixed;inset:0;background:#000;  
+  display:flex;align-items:center;justify-content:center;  
+  z-index:9999;animation:introFade 1s ease forwards;animation-delay:3s  
+}  
+.intro-logo{width:220px;height:220px;object-fit:contain;opacity:0;animation:logoFadeIn 2s ease forwards}  
+@keyframes logoFadeIn{from{opacity:0;transform:scale(1.2)}to{opacity:1}}  
+@keyframes introFade{to{opacity:0;visibility:hidden}}  
+  
+/* HERO */  
+.hero{  
+  min-height:100vh;background:url("banner.jpg") center/cover no-repeat;  
+  display:flex;align-items:center;justify-content:center;  
+  text-align:center;padding:30px  
+}  
+.hero-content{display:flex;flex-direction:column;align-items:center}  
+.hero-logo{width:280px;height:280px;object-fit:contain}  
+.hero h1{color:#E6B65C;font-size:3rem}  
+.hero p{color:#ccc;letter-spacing:2px}  
+  
+/* BUTTONS */  
+.btn-group{  
+  margin-top:14px;  
+  display:flex;  
+  flex-wrap:wrap;  
+  justify-content:center;  
+  max-width:360px  
+}  
+.btn{  
+  margin:6px;  
+  padding:13px 24px;  
+  background:#E6B65C;  
+  color:#000;  
+  text-decoration:none;  
+  font-weight:bold;  
+  border-radius:6px  
+}  
+@media(max-width:767px){  
+  .btn-group a:nth-child(-n+3){width:30%}  
+  .btn-group a:nth-child(4),  
+  .btn-group a:nth-child(5){width:45%}  
+  .btn-group a:nth-child(6){width:92%}  
+}  
+  
+/* NOTICE */  
+.notice-wrap{  
+  margin:18px auto;width:100%;max-width:420px;height:90px;  
+  border:1px solid #E6B65C;overflow:hidden;position:relative  
+}  
+.notice-inner{position:absolute;width:100%;top:0}  
+.notice-item{text-align:center;padding:6px 10px;color:#fff;font-weight:bold}  
+  
+/* SECTION */  
+.section{padding:55px 20px;border-top:1px solid #222}  
+.section h2{text-align:center;color:#E6B65C;margin-bottom:25px}  
+  
+/* HALL OF FAME */  
+.hof-wrapper{  
+  max-width:620px;margin:0 auto;  
+  border:1px solid #E6B65C;padding:20px  
+}  
+.hof-item{  
+  display:flex;align-items:center;gap:14px;margin-bottom:18px  
+}  
+.hof-label{  
+  min-width:160px;font-weight:bold;color:#FFD27D  
+}  
+.hof-item img{  
+  max-width:320px;width:100%;  
+  border-radius:6px;border:1px solid #333  
+}  
+  
+/* TEAM POSITION TABLE */  
+.team-position-box{  
+  max-width:720px;  
+  margin:0 auto;  
+  border:1px solid #E6B65C;  
+  padding:20px;  
+  text-align:center  
+}  
+.team-position-box img{  
+  width:100%;  
+  max-width:680px;  
+  border-radius:6px;  
+  border:1px solid #333  
+}  
+  
+/* SCRIMS GRID */  
+.scrims-grid{  
+  display:grid;  
+  grid-template-columns:1fr;  
+  gap:25px;  
+  max-width:1200px;  
+  margin:0 auto  
+}  
+.scrim-card{  
+  border:1px solid #E6B65C;  
+  padding:22px;  
+  text-align:center  
+}  
+.scrim-card h3{color:#FFD27D;margin-bottom:12px}  
+.scrim-card p{color:#ccc;margin:6px 0}  
+  
+/* SCRIM BUTTONS */  
+.scrim-btns{margin-top:15px}  
+.scrim-btns a{  
+  margin:6px;  
+  padding:10px 18px;  
+  background:#E6B65C;  
+  color:#000;  
+  text-decoration:none;  
+  font-weight:bold;  
+  border-radius:5px;  
+  display:inline-block  
+}  
+  
+/* POINT TABLE */  
+.point-table-box{  
+  max-width:600px;  
+  margin:0 auto;  
+  border:1px solid #E6B65C;  
+  padding:20px  
+}  
+.point-row{  
+  display:flex;  
+  align-items:center;  
+  justify-content:space-between;  
+  padding:8px 0;  
+  border-bottom:1px solid #222;  
+  color:#ccc  
+}  
+.point-left{width:45%;text-align:left}  
+.point-mid{width:10%;text-align:center;color:#E6B65C;font-weight:bold}  
+.point-right{width:45%;text-align:right}  
+.point-note{  
+  margin-top:15px;  
+  text-align:center;  
+  color:#E6B65C;  
+  font-weight:bold  
+}  
+  
+/* CONTACT */  
+.contact-btns{  
+  display:grid;  
+  grid-template-columns:repeat(3,1fr);  
+  gap:12px;  
+  max-width:420px;  
+  margin:0 auto  
+}  
+.contact-btns a{  
+  padding:12px;  
+  text-align:center;  
+  font-weight:bold;  
+  text-decoration:none;  
+  border-radius:6px;  
+  color:#000  
+}  
+.whatsapp{background:#25D366}  
+.instagram{background:linear-gradient(45deg,#feda75,#d62976,#962fbf,#4f5bd5);color:#fff}  
+.telegram{background:#229ED9;color:#fff}  
+.discord{background:#5865F2;color:#fff}  
+.youtube{background:#FF0000;color:#fff}  
+.email{background:#E6B65C}  
+  
+/* FOOTER */  
+.footer{  
+  text-align:center;  
+  padding:20px;  
+  background:#000;  
+  color:#aaa;  
+  font-size:14px  
+}  
+.footer a{color:#888;margin:0 6px;text-decoration:none}  
+  
+/* DESKTOP */  
+@media(min-width:1024px){  
+  body{font-size:120%}  
+  .hero-logo{width:520px;height:520px}  
+  .intro-logo{width:550px;height:550px}  
+  .scrims-grid{grid-template-columns:1fr 1fr 1fr}  
+}  
+</style>  </head>  <body>  <div class="intro"><img src="logo.png" class="intro-logo"></div>  <div class="hero">  
+<div class="hero-content">  <img src="logo.png" class="hero-logo">  
+<h1>FinalCircle ESports</h1>  
+<p>WE BUILD TRUST</p>  <div class="btn-group">  
+  <a href="#daily" class="btn">Daily Scrims</a>  
+  <a href="#weekly" class="btn">Weekly League</a>  
+  <a href="#tdm" class="btn">TDM Revenge</a>  
+  <a href="#hof" class="btn">Hall of Fame</a>  
+  <a href="#rules" class="btn">Rules & Regulations</a>  
+  <a href="#contact" class="btn">Contact Us</a>  
+</div>  <div class="notice-wrap">  
+  <div class="notice-inner" id="noticeInner">  
+    <div class="notice-item">🔔Elite Weekly League starts 1 March</div>  
+    <div class="notice-item">🔔Daily Paid Scrims starts 15 Feb</div>  
+    <div class="notice-item">🔔TDM Revenge starts 5 Feb</div>  
+  </div>  
+</div>  </div>  
+</div>  <!-- HALL OF FAME -->  <div class="section" id="hof">  
+<h2>Hall of Fame – Weekly Elite League</h2>  
+<div class="hof-wrapper">  
+  <div class="hof-item"><div class="hof-label">🥇 Winner</div><img src="hall-of-fame/wt1.png"></div>  
+  <div class="hof-item"><div class="hof-label">🥈 Runner Up</div><img src="hall-of-fame/wt2.png"></div>  
+  <div class="hof-item"><div class="hof-label">🥉 3rd</div><img src="hall-of-fame/wt3.png"></div>  
+  <div class="hof-item"><div class="hof-label">🔥 Most Kill Team</div><img src="hall-of-fame/tkt.png"></div>  
+  <div class="hof-item"><div class="hof-label">🎯 Most Kill Player</div><img src="hall-of-fame/tki.png"></div>  
+</div>  
+</div>  <!-- TEAM POSITION TABLE -->  <div class="section">  
+<h2>Team Position Table</h2>  
+<div class="team-position-box">  
+  <img src="team-position-table.png" alt="Team Position Table">  
+</div>  
+</div>  <!-- SCRIMS -->  <div class="section">  
+<h2>Our Scrims</h2>  <div class="scrims-grid">  <div class="scrim-card" id="daily">  
+<h3>Daily Paid Scrims</h3>  
+<p>Game: BGMI</p>  
+<p>Entry: ₹50 / Team</p>  
+<p>Mode: Squad (TPP)</p>  
+<p>Maps: Erangel / Miramar</p>  
+<p>Matches: 3 per day</p>  
+<p>Teams: 20</p>  
+<p>Prize Pool: ₹750</p>  
+<p>Sunday Dhamaka: prizepool -1000 • Top 3/day FREE entry</p>  
+<p>Teams: 20 = 3×6(winners)+2(🃏wildcard)</p>  
+<div class="scrim-btns">  
+  <a href="PASTE_DAILY_FORM_LINK" target="_blank">Join</a>  
+  <a href="dinfo.pdf" target="_blank">More Information</a>  
+</div>  
+</div>  <div class="scrim-card" id="weekly">  
+<h3>Weekly Elite League</h3>  
+<p>Entry: ₹600 / Team</p>  
+<p>Fixed Rooster</p>  
+<p>No Daily ragistration Headache</p>  
+<p>Duration: 7 Days</p>  
+<p>Matches: 3 per day</p>  
+<b>Total Teams: 20</b></p>  
+<p>• 16 Teams = Paid Slots</p>  
+<p>• 3 Teams = Previous Week Top 3</p>  
+<p>• 1 Team = Invitation Slot</p>  
+<p>Prize Pool: ₹8000</p>  
+<p>Top Kill Team: ₹500</p>  
+<p>Top Kill Individual: ₹500</p>  
+<p>Online streaming on YouTube</p>  
+<div class="scrim-btns">  
+  <a href="PASTE_WEEKLY_FORM_LINK" target="_blank">Join</a>  
+  <a href="winfo.pdf" target="_blank">More Information</a>  
+</div>  
+</div>  <div class="scrim-card" id="tdm">  
+<h3>TDM Revenge Scrims</h3>  
+<p>Entry: ₹10 / Player(4v4) •single Entry or squad both allows</p>  
+<p>Entry: ₹40 / Player (1v1) • Rendom or your custom challenger</p>  
+<p>Per Kill: ₹1</p>  
+<p>Per Death Penalty: ₹0.5</p>  
+<p>Final Payout = (Kills × 1) − (Deaths × 0.5)</p>  
+<div class="scrim-btns">  
+  <a href="PASTE_TDM_FORM_LINK" target="_blank">Join</a>  
+  <a href="tinfo.pdf" target="_blank">More Information</a>  
+</div>  
+</div>  </div>  
+</div>  <!-- POINT TABLE -->  <div class="section">  
+<h2>Point Distribution Table</h2>  
+<div class="point-table-box">  
+  <div class="point-row"><div class="point-left">🥇 Winner</div><div class="point-mid">=</div><div class="point-right">15</div></div>  
+  <div class="point-row"><div class="point-left">🥈 Runner Up</div><div class="point-mid">=</div><div class="point-right">12</div></div>  
+  <div class="point-row"><div class="point-left">🥉 3rd</div><div class="point-mid">=</div><div class="point-right">10</div></div>  
+  <div class="point-row"><div class="point-left">4th Place</div><div class="point-mid">=</div><div class="point-right">8</div></div>  
+  <div class="point-row"><div class="point-left">5th Place</div><div class="point-mid">=</div><div class="point-right">6</div></div>  
+  <div class="point-row"><div class="point-left">6th Place</div><div class="point-mid">=</div><div class="point-right">4</div></div>  
+  <div class="point-row"><div class="point-left">7th Place</div><div class="point-mid">=</div><div class="point-right">2</div></div>  
+  <div class="point-row"><div class="point-left">8th – 12th</div><div class="point-mid">=</div><div class="point-right">1</div></div>  
+  <div class="point-row"><div class="point-left">13th – 15th</div><div class="point-mid">=</div><div class="point-right">0</div></div>  
+  <div class="point-row"><div class="point-left">16th – 20th</div><div class="point-mid">=</div><div class="point-right">-1</div></div>  
+  <div class="point-row"><div class="point-left">20th – 25th</div><div class="point-mid">=</div><div class="point-right">-2</div></div>  
+  <div class="point-row"><div class="point-left">Per Kill</div><div class="point-mid">=</div><div class="point-right">1 Point</div></div>  
+</div>  
+<div class="point-note">  
+This point table is applicable for Daily Paid Scrims and Weekly Elite League  
+</div>  
+</div>  <!-- RULES -->  <div class="section" id="rules">  
+<h2>Rules & Regulations</h2>  
+<p>• Only BGMI official version allowed</p>  
+<p>• Any player or substitute with a BGMI ID level below 35 is not allowed.  
+     If such a player joins the lobby, they will be removed immediately, and the team must continue the match with a player loss.</p>  
+<p>• If the entire team is found to have BGMI ID levels below 35, the whole team will be removed from the lobby, and no refund will be provided.</p>  
+<p>• Emulator / iPad not allowed</p>  
+<p>• Any use of hacks, mods, or scripts will result in a permanent ban with no refund.</p>  
+<p>• Gameplay recording mandatory</p>  
+<p>• If a team is eliminated by a hacker, valid gameplay proof must be submitted.  
+     After verification, a free slot will be provided the next day if the claim is genuine.</p>  
+<p>• No refund will be provided after slot booking under any circumstances.</p>  
+<p>• The organizer’s decision will be final.</p>  
+</div>  <!-- CONTACT -->  <div class="section" id="contact">  
+<h2>Contact Us</h2>  
+<div class="contact-btns">  
+  <a href="PASTE_WHATSAPP_LINK" class="whatsapp">WhatsApp</a>  
+  <a href="PASTE_INSTAGRAM_LINK" class="instagram">Instagram</a>  
+  <a href="PASTE_TELEGRAM_LINK" class="telegram">Telegram</a>  
+  <a href="PASTE_DISCORD_LINK" class="discord">Discord</a>  
+  <a href="PASTE_YOUTUBE_LINK" class="youtube">YouTube</a>  
+  <a href="mailto:finalcircleesports@gmail.com" class="email">Mail Us</a>  
+</div>  
+</div>  <div class="footer">  
+© 2026 Final Circle eSports™ |  
+<a href="about-us.pdf" target="_blank">About Us</a> |  
+<a href="privacy-policy.pdf" target="_blank">Privacy Policy</a> |  
+<a href="terms-and-conditions.pdf" target="_blank">Terms & Conditions</a> |  
+<a href="disclaimer.pdf" target="_blank">Disclaimer</a><br><br>  
+This is the official website of FinalCircle ESports.    
+This platform does not promote betting, gambling, or any luck-based games.    
+All tournaments are skill-based, rule-driven, and conducted for fair competition only.  
+</div>  <script>  
+const inner=document.getElementById("noticeInner");  
+let pos=0,speed=0.5;  
+inner.innerHTML+=inner.innerHTML;  
+const h=inner.children[0].offsetHeight;  
+const total=h*(inner.children.length/2);  
+function scrollNotice(){  
+  pos-=speed;  
+  if(Math.abs(pos)>=total)pos=0;  
+  inner.style.transform=`translateY(${pos}px)`;  
+  requestAnimationFrame(scrollNotice);  
+}  
+scrollNotice();  
+</script>  </body>  
+  </html>  
