@@ -213,6 +213,36 @@ body{background:#0b0b0b;color:#fff}
   /* ❌ flex-direction change NAHI kar rahe
      ❌ alignment change NAHI kar rahe */
 }
+  /* ================================
+   MOBILE HALL OF FAME FIX
+   Text upar + PNG niche
+   Desktop bilkul same rahega
+================================ */
+@media (max-width:768px){
+
+  /* Hall of Fame item stack */
+  .hof-item{
+    flex-direction:column;
+    align-items:stretch; /* full width */
+  }
+
+  /* Label upar center me */
+  .hof-label{
+    width:100%;
+    min-width:unset;
+    text-align:left;
+    margin-bottom:8px;
+  }
+
+  /* PNG full visible */
+  .hof-item img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    object-fit:contain;
+    display:block;
+  }
+}
 </style>  </head>  <body>  <div class="intro"><img src="logo.png" class="intro-logo"></div>  <div class="hero">  
 <div class="hero-content">  <img src="logo.png" class="hero-logo">  
 <h1>FinalCircle ESports</h1>  
